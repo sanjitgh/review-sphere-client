@@ -7,38 +7,43 @@ import MyReview from "../Pages/MyReview";
 import Login from "../Pages/Login";
 import SignUp from "../Pages/SignUp";
 import Home from "../Pages/Home";
+import PrivetRoute from "../PrivetRoute/PrivetRoute";
 
 const router = createBrowserRouter([
   {
     path: "/",
     errorElement: <ErrorPage></ErrorPage>,
     element: <MainLayout></MainLayout>,
-    children:[
+    children: [
       {
-        path: '/',
-        element: <Home></Home>
+        path: "/",
+        element: <Home></Home>,
       },
       {
-        path:'/services',
-        element: <Services></Services>
+        path: "/services",
+        element: <Services></Services>,
       },
       {
-        path:'/add-service',
-        element: <AddService></AddService>
+        path: "/add-service",
+        element: (
+          <PrivetRoute>
+            <AddService></AddService>
+          </PrivetRoute>
+        ),
       },
       {
-        path:'/my-reviews',
-        element: <MyReview></MyReview>
+        path: "/my-reviews",
+        element: <MyReview></MyReview>,
       },
       {
-        path:'/login',
-        element: <Login></Login>
+        path: "/login",
+        element: <Login></Login>,
       },
       {
-        path:'/signup',
-        element: <SignUp></SignUp>
+        path: "/signup",
+        element: <SignUp></SignUp>,
       },
-    ]
+    ],
   },
 ]);
 

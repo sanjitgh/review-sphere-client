@@ -1,17 +1,68 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
-
+import axios from "axios";
 import "react-datepicker/dist/react-datepicker.css";
 import useAuth from "../hook/useAuth";
+import Swal from "sweetalert2";
 
 const AddService = () => {
   const [startDate, setStartDate] = useState(new Date());
-  const {user} = useAuth();
+  const { user } = useAuth();
 
+  const handleService = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const image = form.image.value;
+    const title = form.title.value;
+    const companyName = form.companyName.value;
+    const website = form.website.value;
+    const price = form.price.value;
+    const category = form.category.value;
+    const date = startDate;
+    const description = form.description.value;
+
+    const data = {
+      email,
+      image,
+      title,
+      companyName,
+      website,
+      price,
+      category,
+      date,
+      description,
+    };
+
+    // send data mongodb
+    axios
+      .post("http://localhost:5000/service", data)
+      .then((res) => {
+        Swal.fire({
+          position: "top-center",
+          icon: "success",
+          title: "Service Added Successfully.",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        form.reset();
+      })
+      .catch((error) => {
+        Swal.fire({
+          title: "Error!",
+          text: "Failed to Added Service",
+          icon: "error",
+          confirmButtonText: "Cool",
+        });
+      });
+  };
   return (
     <div>
       <div className="min-h-[800px] flex justify-center items-center bg-relative">
-        <form className="w-[1000px] mx-auto px-3 border shadow-xlrounded z-10 my-16 ">
+        <form
+          onSubmit={handleService}
+          className="w-[1000px] mx-auto px-3 border shadow-xlrounded z-10 my-16 "
+        >
           <h1 className="text-2xl md:text-5xl font-bold text-center pt-10 logo">
             Add Service Here
           </h1>
@@ -41,7 +92,7 @@ const AddService = () => {
               <input
                 name="image"
                 autoComplete="off"
-                type="text"
+                type="url"
                 placeholder="Service image link"
                 required
                 className="input input-bordered w-full bg-transparent focus:outline-none rounded-none placeholder-gray-300"
@@ -89,7 +140,7 @@ const AddService = () => {
               </div>
               <input
                 name="website"
-                type="text"
+                type="url"
                 autoComplete="off"
                 required
                 placeholder="https://www.example.com"
@@ -145,10 +196,24 @@ const AddService = () => {
               />
             </label>
 
+            {/* Price */}
+            <label className="form-control col-span-2 w-full">
+              <div className="label">
+                <span className="label-text text-black text-base">
+                  Description
+                </span>
+              </div>
+              <textarea
+                className="textarea textarea-bordered h-32 w-full  focus:outline-none rounded-none placeholder-gray-300"
+                name="description"
+                placeholder="Write details here..."
+              ></textarea>
+            </label>
+
             {/* button */}
             <div className="col-span-2 text-center pb-5">
               <input
-                className="btn text-white bg-gray-800  transition-all hover:rounded-bl-lg rounded-none w-40"
+                className="btn text-white hover:bg-gray-800 bg-gray-800 transition-all rounded-none w-40"
                 type="submit"
                 value="Add Service"
               />
