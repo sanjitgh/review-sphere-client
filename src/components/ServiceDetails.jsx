@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import { format } from "date-fns";
 import { Button, Rating, Textarea } from "@material-tailwind/react";
 import useAuth from "../hook/useAuth";
+import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 const ServiceDetails = () => {
   const [service, setService] = useState({});
@@ -48,7 +50,27 @@ const ServiceDetails = () => {
       currentUserProfileImage,
     };
 
-    console.log(data);
+    if(rating === 0){
+      return toast.error("Add Rating Star!")
+    }
+
+    // send review in db
+    axios
+      .post("http://localhost:5000/review", data)
+      .then((res) => {
+        Swal.fire({
+          position: "top-center",
+          icon: "success",
+          title: "Thanks for your review!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        e.target.reset();
+        setRating(0)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -103,7 +125,7 @@ const ServiceDetails = () => {
             </p>
           </div>
           <div>
-            <Textarea name="comment" label="Comment" className="h-40" success />
+            <Textarea name="comment" label="Comment" className="h-52" success required/>
           </div>
           <div className="flex items-center gap-2">
             <h5 className="font-semibold">Give Rating : </h5>
@@ -111,6 +133,7 @@ const ServiceDetails = () => {
               style={{ maxWidth: 250 }}
               value={rating}
               onChange={setRating}
+              required
             />
           </div>
           <div className="text-end">
