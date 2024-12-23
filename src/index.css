@@ -11,7 +11,7 @@ body {
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: #a855f7 !important;
+  color: #4caf50  !important;
 }
 
 @tailwind base;

@@ -26,7 +26,7 @@ const Banner = () => {
                 preferences, and budget.
               </p>
 
-              <button className="btn bg-purple-500 hover:bg-purple-600 border-none text-white mt-8 rounded-none">
+              <button className="btn bg-green-600 hover:bg-green-700 border-none text-white mt-8 rounded-none">
                 Start Exploring
               </button>
             </div>
@@ -45,7 +45,7 @@ const Banner = () => {
                 providers across various industries.
               </p>
 
-              <button className="btn bg-purple-500 hover:bg-purple-600 border-none text-white mt-8 rounded-none">
+              <button className="btn bg-green-600 hover:bg-green-700 border-none text-white mt-8 rounded-none">
                 Get Started Now
               </button>
             </div>
@@ -64,7 +64,7 @@ const Banner = () => {
                 confident decisions when choosing services.
               </p>
 
-              <button className="btn bg-purple-500 hover:bg-purple-600 border-none text-white mt-8 rounded-none">
+              <button className="btn bg-green-600 hover:bg-green-700 border-none text-white mt-8 rounded-none">
                 Write a Review
               </button>
             </div>

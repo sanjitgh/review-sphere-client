@@ -10,17 +10,12 @@ import { MdOutlineArrowRightAlt } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const ServiceCard = ({ service }) => {
-  console.log(service);
   const {
     _id,
-    email,
     image,
     title,
-    companyName,
-    website,
     price,
     category,
-    date,
     description,
   } = service;
 
@@ -33,7 +28,7 @@ const ServiceCard = ({ service }) => {
         <Typography variant="h5" color="blue-gray" className="mb-2">
           {title}
         </Typography>
-        <Typography>{description}</Typography>
+        <Typography>{description.slice(0, 60)}...</Typography>
         <Typography className="my-1">
           <span className="text-black font-bold"> Category:</span> {category}
         </Typography>
@@ -42,7 +37,7 @@ const ServiceCard = ({ service }) => {
         </Typography>
       </CardBody>
       <CardFooter className="pt-0">
-        <Link to={'/'}>
+        <Link to={`/service/${_id}`}>
           <Button className="flex items-center gap-1">
             See Details <MdOutlineArrowRightAlt className="text-xl" />
           </Button>

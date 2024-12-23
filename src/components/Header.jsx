@@ -18,7 +18,7 @@ const Header = () => {
     <>
       <NavLink
         className={({ isActive }) =>
-          isActive ? "border-b-purple-500 border-b" : ""
+          isActive ? "border-b-green-500 border-b" : ""
         }
         to={"/"}
       >
@@ -26,7 +26,7 @@ const Header = () => {
       </NavLink>
       <NavLink
         className={({ isActive }) =>
-          isActive ? "border-b-purple-500 border-b" : ""
+          isActive ? "border-b-green-500 border-b" : ""
         }
         to={"/services"}
       >
@@ -37,7 +37,7 @@ const Header = () => {
         <>
           <NavLink
             className={({ isActive }) =>
-              isActive ? "border-b-purple-500 border-b" : ""
+              isActive ? "border-b-green-500 border-b" : ""
             }
             to={"/add-service"}
           >
@@ -45,7 +45,7 @@ const Header = () => {
           </NavLink>
           <NavLink
             className={({ isActive }) =>
-              isActive ? "border-b-purple-500 border-b" : ""
+              isActive ? "border-b-green-500 border-b" : ""
             }
             to={"/my-reviews"}
           >
@@ -56,7 +56,7 @@ const Header = () => {
         <>
           <NavLink
             className={({ isActive }) =>
-              isActive ? "border-b-purple-500 border-b" : ""
+              isActive ? "border-b-green-500 border-b" : ""
             }
             to={"/login"}
           >
@@ -64,7 +64,7 @@ const Header = () => {
           </NavLink>
           <NavLink
             className={({ isActive }) =>
-              isActive ? "border-b-purple-500 border-b" : ""
+              isActive ? "border-b-green-500 border-b" : ""
             }
             to={"/signup"}
           >
@@ -75,7 +75,7 @@ const Header = () => {
     </>
   );
   return (
-    <div className="navbar py-4 bg-gray-100 text-black md:px-10 sticky top-0 z-[99]">
+    <div className="navbar py-4 border-b bg-white/70 backdrop-blur-lg text-black md:px-10 sticky top-0 z-[99]">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
