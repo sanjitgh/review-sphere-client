@@ -5,7 +5,6 @@ import { RouterProvider } from "react-router-dom";
 import Router from "./Router/Router.jsx";
 import AuthProvaider from "./provaider/AuthProvaider.jsx";
 import { ThemeProvider } from "@material-tailwind/react";
-import '@smastrom/react-rating/style.css'
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

@@ -38,7 +38,7 @@ const ServiceCard = ({ service }) => {
       </CardBody>
       <CardFooter className="pt-0">
         <Link to={`/service/${_id}`}>
-          <Button className="flex items-center gap-1">
+          <Button className="flex items-center gap-1 bg-green-500">
             See Details <MdOutlineArrowRightAlt className="text-xl" />
           </Button>
         </Link>

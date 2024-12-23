@@ -12,7 +12,6 @@ const ServiceDetails = () => {
   const { id } = useParams();
   const { user } = useAuth();
   const [rating, setRating] = useState(0);
-
   const {
     _id,
     email,
@@ -41,17 +40,23 @@ const ServiceDetails = () => {
     const currentUserName = user?.displayName;
     const currentUserProfileImage = user?.photoURL;
     const postId = _id;
-
+    const postedDate = new Date();
+    const userEmail = user?.email;
     const data = {
       postId,
+      image,
+      title,
+      website,
       comment,
       rating,
+      postedDate,
+      userEmail,
       currentUserName,
       currentUserProfileImage,
     };
 
-    if(rating === 0){
-      return toast.error("Add Rating Star!")
+    if (rating === 0) {
+      return toast.error("Add Rating Star!");
     }
 
     // send review in db
@@ -66,7 +71,7 @@ const ServiceDetails = () => {
           timer: 1500,
         });
         e.target.reset();
-        setRating(0)
+        setRating(0);
       })
       .catch((error) => {
         console.log(error);
@@ -125,15 +130,22 @@ const ServiceDetails = () => {
             </p>
           </div>
           <div>
-            <Textarea name="comment" label="Comment" className="h-52" success required/>
+            <Textarea
+              name="comment"
+              label="Comment"
+              className="h-52"
+              success
+              required
+            />
           </div>
           <div className="flex items-center gap-2">
             <h5 className="font-semibold">Give Rating : </h5>
             <Rating
-              style={{ maxWidth: 250 }}
+              style={{ maxWidth: 150 }}
               value={rating}
               onChange={setRating}
-              required
+              unratedColor="green"
+              ratedColor="green"
             />
           </div>
           <div className="text-end">

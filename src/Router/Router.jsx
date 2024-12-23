@@ -42,7 +42,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/my-reviews",
-        element: <MyReview></MyReview>,
+        element: (
+          <PrivetRoute>
+            <MyReview></MyReview>
+          </PrivetRoute>
+        ),
       },
       {
         path: "/login",
