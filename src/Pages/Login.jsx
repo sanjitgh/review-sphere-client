@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provaider/AuthProvaider";
 import toast from "react-hot-toast";
-import { FaGoogle } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 
 const Login = () => {
@@ -121,12 +120,12 @@ const Login = () => {
                 onClick={handelLoginWithGoogle}
                 className="text-base flex items-center gap-3"
               >
-                Login With Google{" "}
-                <FaGoogle className="text-2xl text-blue-400" />
+                Login With Google
+                <img src="https://docs.material-tailwind.com/icons/google.svg" alt="metamask" className="h-6 w-6" />
               </Link>
             </div>
             <div className="form-control mt-6">
-              <button className="btn bg-gray-500 border-white hover:bg-gray-600 text-white text-base font-medium">
+              <button className="btn bg-green-500 border-white hover:bg-green-600 text-white text-base font-medium">
                 Login
               </button>
             </div>
@@ -134,7 +133,7 @@ const Login = () => {
               <p>
                 Are you new here? 
                 <Link to={"/signup"}>
-                  <b> Register</b>
+                  <b>  Register</b>
                 </Link>
               </p>
             </div>

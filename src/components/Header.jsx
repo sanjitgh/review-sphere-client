@@ -47,6 +47,14 @@ const Header = () => {
             className={({ isActive }) =>
               isActive ? "border-b-green-500 border-b" : ""
             }
+            to={"/my-service"}
+          >
+            My Service
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "border-b-green-500 border-b" : ""
+            }
             to={"/my-reviews"}
           >
             My Reviews
@@ -101,7 +109,7 @@ const Header = () => {
             {links}
           </ul>
         </div>
-        <Link to={"/"} className="text-3xl font-bold logo">
+        <Link to={"/"} className="text-3xl cursor-default font-bold logo">
           ReviewSphere
         </Link>
       </div>

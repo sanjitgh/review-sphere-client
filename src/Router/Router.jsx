@@ -9,6 +9,7 @@ import SignUp from "../Pages/SignUp";
 import Home from "../Pages/Home";
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
 import ServiceDetails from "../components/ServiceDetails";
+import MyService from "../Pages/MyService";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,14 @@ const router = createBrowserRouter([
             <MyReview></MyReview>
           </PrivetRoute>
         ),
+      },
+      {
+        path:'/my-service',
+        element:(
+          <PrivetRoute>
+            <MyService></MyService>
+          </PrivetRoute>
+        )
       },
       {
         path: "/login",

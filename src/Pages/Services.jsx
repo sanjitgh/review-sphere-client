@@ -8,7 +8,7 @@ const Services = () => {
   // get service data from db
   useEffect(() => {
     document.title = "Services | ReviewSphere";
-    axios.get("http://localhost:5000/service").then((res) => {
+    axios.get("http://localhost:5000/services").then((res) => {
       setService(res.data);
     });
   }, []);

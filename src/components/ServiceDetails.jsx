@@ -135,7 +135,7 @@ const ServiceDetails = () => {
             <Textarea
               name="comment"
               label="Comment"
-              className="h-52"
+              style={{ height: 200 }}
               success
               required
             />

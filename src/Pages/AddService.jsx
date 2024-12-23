@@ -217,7 +217,7 @@ const AddService = () => {
             {/* button */}
             <div className="col-span-2 text-center pb-5">
               <input
-                className="btn text-white hover:bg-gray-800 bg-gray-800 transition-all rounded-none w-40"
+                className="btn text-white hover:bg-green-600 bg-green-500 transition-all rounded-none w-40"
                 type="submit"
                 value="Add Service"
               />
