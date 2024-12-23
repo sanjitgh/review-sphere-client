@@ -96,7 +96,7 @@ const Header = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-cyan-700 dark:bg-slate-700 rounded-box mt-3 w-52 p-4 shadow z-20 gap-3"
+            className="menu menu-sm dropdown-content bg-white rounded-box mt-3 w-52 p-4 shadow z-20 gap-3"
           >
             {links}
           </ul>

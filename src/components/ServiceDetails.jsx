@@ -9,12 +9,14 @@ import toast from "react-hot-toast";
 
 const ServiceDetails = () => {
   const [service, setService] = useState({});
+  useEffect(() => {
+    document.title = `${service?.title} | ReviewSphere`;
+  }, [service]);
   const { id } = useParams();
   const { user } = useAuth();
   const [rating, setRating] = useState(0);
   const {
     _id,
-    email,
     image,
     title,
     companyName,

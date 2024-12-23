@@ -19,13 +19,31 @@ const OurParters = () => {
               confident we can find the process that will best help you meet
               your goals.
             </p>
-            <Button className="mt-6 font-bold text-lg rounded-none border-2" variant="outlined" size="lg">View More</Button>
+            <Button
+              className="mt-6 font-bold text-lg rounded-none border-2"
+              variant="outlined"
+              size="lg"
+            >
+              View More
+            </Button>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 justify-items-center">
-            <img className="max-w-28" src={image1} alt="" />
-            <img className="max-w-28" src={image2} alt="" />
-            <img className="max-w-28" src={image3} alt="" />
-            <img className="max-w-28" src={image4} alt="" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-20 justify-items-center">
+            <div className="text-center mx-auto">
+              <img className="max-w-28 mx-auto" src={image1} alt="" />
+              <p className="font-semibold mt-3F">Software. Gadgets. Innovation.</p>
+            </div>
+            <div className="text-center mx-auto md:mt-20">
+              <img className="max-w-28 mx-auto" src={image2} alt="" />
+              <p className="font-semibold mt-3F">Clothing. Accessories. Styling.</p>
+            </div>
+            <div className="text-center mx-auto md:-mt-20">
+              <img className="max-w-28 mx-auto" src={image3} alt="" />
+              <p className="font-semibold mt-3F">Research. Solutions. Advancement.</p>
+            </div>
+            <div className="text-center mx-auto">
+              <img className="max-w-28 mx-auto" src={image4} alt="" />
+              <p className="font-semibold mt-3F">Tours. Bookings. Adventures.</p>
+            </div>
           </div>
         </div>
       </div>

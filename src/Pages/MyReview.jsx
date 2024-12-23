@@ -8,6 +8,7 @@ const MyReview = () => {
   const { user } = useAuth();
 
   useEffect(() => {
+    document.title = "My Reviews | ReviewSphere";
     axios
       .get(`http://localhost:5000/review?email=${user?.email}`)
       .then((res) => {

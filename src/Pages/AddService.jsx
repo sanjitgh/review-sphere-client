@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import axios from "axios";
 import "react-datepicker/dist/react-datepicker.css";
@@ -8,6 +8,10 @@ import Swal from "sweetalert2";
 const AddService = () => {
   const [startDate, setStartDate] = useState(new Date());
   const { user } = useAuth();
+
+  useEffect(()=>{
+    document.title = "Add Service | ReviewSphere";
+  },[])
 
   const handleService = (e) => {
     e.preventDefault();
