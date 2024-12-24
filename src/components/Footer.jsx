@@ -79,8 +79,9 @@ const Footer = () => {
             </Link>
           </nav>
         </div>
+        <div className="divider"></div>
         <div>
-          <p className="text-center font-medium mt-20">
+          <p className="text-center font-medium mt-10">
           ReviewSphere All rights reserved 2024
           </p> 
         </div>

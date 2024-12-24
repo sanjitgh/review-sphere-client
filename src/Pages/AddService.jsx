@@ -61,7 +61,7 @@ const AddService = () => {
       });
   };
   return (
-    <div>
+    <div className="py-10 bg-gray-50">
       <div className="min-h-[800px] flex justify-center items-center bg-relative">
         <form
           onSubmit={handleService}

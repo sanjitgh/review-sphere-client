@@ -90,7 +90,7 @@ const MyServiceCard = ({ service, onDelete }) => {
       description,
     };
 
-    // send data mongodb
+    // update data mongodb
     try {
       axios.put(`http://localhost:5000/service/${_id}`, updatedData);
       Swal.fire({

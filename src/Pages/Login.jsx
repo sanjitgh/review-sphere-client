@@ -66,9 +66,9 @@ const Login = () => {
   };
 
   return (
-    <div className=" dark:bg-slate-800 py-20 min-h-[95vh] flex justify-center items-center">
+    <div className="py-20 min-h-[95vh] bg-gray-50 flex justify-center items-center">
       <div className="container mx-auto px-3">
-        <div className="card border md:p-10 p-5 max-w-[650px] mx-auto">
+        <div className="card border md:p-10 p-5 max-w-[650px] mx-auto shadow-lg shadow-green-50">
           <h1 className="text-cente text-center font-semibold text-2xl md:text-5xl mb-8">
             Login Form
           </h1>
@@ -104,7 +104,7 @@ const Login = () => {
               />
             </div>
             {errors.password && (
-              <p className="text-blue-500 mb-2 mt-3">
+              <p className="text-green-500 mb-2 mt-3">
                 {errors.password.message}
               </p>
             )}

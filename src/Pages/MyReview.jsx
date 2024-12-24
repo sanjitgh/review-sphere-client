@@ -24,20 +24,26 @@ const MyReview = () => {
 
   return (
     <div className="py-20 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-2">
+      <div className="max-w-6xl mx-auto px-2 min-h-[95vh]">
         <h1 className="text-center font-bold text-2xl md:text-5xl mb-16">
           My Reviews
         </h1>
-        <p className="mb-4"><span className="font-semibold">Total Review :</span> {review.length}</p>
-        <div className="grid grid-cols-1 gap-8">
-          {review.map((review) => (
-            <ReviewCard
-              key={review._id}
-              review={review}
-              onDelete={handleDelete}
-            ></ReviewCard>
-          ))}
-        </div>
+        <p className="mb-4">
+          <span className="font-semibold">Total Review :</span> {review.length}
+        </p>
+        {review.length > 0 ? (
+          <div className="grid grid-cols-1 gap-8">
+            {review.map((review) => (
+              <ReviewCard
+                key={review._id}
+                review={review}
+                onDelete={handleDelete}
+              ></ReviewCard>
+            ))}
+          </div>
+        ) : (
+          <p className="text-center text-2xl font-semibold">No Review Found</p>
+        )}
       </div>
     </div>
   );

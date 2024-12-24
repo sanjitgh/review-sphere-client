@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { format } from "date-fns";
 import { Button, Rating, Textarea } from "@material-tailwind/react";
 import useAuth from "../hook/useAuth";
@@ -9,6 +9,7 @@ import toast from "react-hot-toast";
 
 const ServiceDetails = () => {
   const [service, setService] = useState({});
+  const navigate = useNavigate();
   useEffect(() => {
     document.title = `${service?.title} | ReviewSphere`;
   }, [service]);
@@ -74,6 +75,7 @@ const ServiceDetails = () => {
         });
         e.target.reset();
         setRating(0);
+        navigate('/my-reviews')
       })
       .catch((error) => {
         console.log(error);

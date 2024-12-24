@@ -35,26 +35,6 @@ const SignUp = () => {
             email: email,
           });
         });
-
-        const newUser = {
-          name,
-          image,
-          email,
-        };
-
-        // save user info to the database
-        // fetch("https://orchid-backend-server.vercel.app/users", {
-        //   method: "POST",
-        //   headers: {
-        //     "content-type": "application/json",
-        //   },
-        //   body: JSON.stringify(newUser),
-        // })
-        //   .then((res) => res.json())
-        //   .then((data) => {
-        //     console.log(data);
-        //   });
-
         navigate("/");
       })
       .catch((error) => {
@@ -63,9 +43,9 @@ const SignUp = () => {
   };
 
   return (
-    <div className="py-20 min-h-[95vh] flex justify-center items-center">
+    <div className="py-20 min-h-[95vh] flex justify-center items-center bg-gray-50">
       <div className="container mx-auto px-3">
-        <div className="card border md:p-10 p-5 max-w-[650px] mx-auto">
+        <div className="card border md:p-10 p-5 max-w-[650px] mx-auto shadow-lg shadow-green-50">
           <h1 className="text-center text-black font-semibold text-2xl md:text-5xl mb-8">
             Sign Up Form
           </h1>
@@ -133,7 +113,7 @@ const SignUp = () => {
             </div>
 
             <div className="form-control mt-6">
-              <button className="btn bg-gray-500 border-white hover:bg-gray-600 text-white text-base font-medium">
+              <button className="btn bg-green-500 border-white hover:bg-green-600 text-white text-base font-medium">
                 Register
               </button>
             </div>

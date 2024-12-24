@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const ErrorPage = () => {
   return (
-    <div className="bg-cyan-700 h-screen flex flex-col justify-center items-center">
+    <div className="bg-green-800 h-screen flex flex-col justify-center items-center">
       <div>
         <h1 className="text-9xl text-white text-center flex justify-center">
           <TbError404 />

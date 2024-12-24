@@ -1,13 +1,11 @@
 import React, { useRef, useState } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-
-// import required modules
 import { Navigation } from "swiper/modules";
+import { Button } from "@material-tailwind/react";
+import { motion } from "motion/react";
+import { MdOutlineKeyboardDoubleArrowDown } from "react-icons/md";
 
 const Banner = () => {
   return (
@@ -25,10 +23,22 @@ const Banner = () => {
                 you choose the best options that perfectly suit your needs,
                 preferences, and budget.
               </p>
-
-              <button className="btn bg-green-600 hover:bg-green-700 border-none text-white mt-8 rounded-none">
-                Start Exploring
-              </button>
+              <motion.div
+                animate={{ y: [0, 30, 30, 0] }}
+                transition={{
+                  duration: 4,
+                  delay: 0,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                <Button className="bg-green-500 py-4 hover:bg-green-600 rounded-none mt-6">
+                  <span className="flex items-center gap-2">
+                    Start Exploring
+                    <MdOutlineKeyboardDoubleArrowDown />
+                  </span>
+                </Button>
+              </motion.div>
             </div>
           </div>
         </SwiperSlide>
@@ -44,10 +54,22 @@ const Banner = () => {
                 reviews from real people to make smarter choices for service
                 providers across various industries.
               </p>
-
-              <button className="btn bg-green-600 hover:bg-green-700 border-none text-white mt-8 rounded-none">
-                Get Started Now
-              </button>
+              <motion.div
+                animate={{ y: [0, 30, 30, 0] }}
+                transition={{
+                  duration: 4,
+                  delay: 0,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                <Button className="bg-green-500 py-4 hover:bg-green-600 rounded-none mt-6">
+                  <span className="flex items-center gap-2">
+                    Get Started Now
+                    <MdOutlineKeyboardDoubleArrowDown />
+                  </span>
+                </Button>
+              </motion.div>
             </div>
           </div>
         </SwiperSlide>
@@ -63,10 +85,22 @@ const Banner = () => {
                 contribute to a trusted community that helps others make
                 confident decisions when choosing services.
               </p>
-
-              <button className="btn bg-green-600 hover:bg-green-700 border-none text-white mt-8 rounded-none">
-                Write a Review
-              </button>
+              <motion.div
+                animate={{ y: [0, 30, 30, 0] }}
+                transition={{
+                  duration: 4,
+                  delay: 0,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                <Button className="bg-green-500 py-4 hover:bg-green-600 rounded-none mt-6">
+                  <span className="flex items-center gap-2">
+                    Write a Review
+                    <MdOutlineKeyboardDoubleArrowDown />
+                  </span>
+                </Button>
+              </motion.div>
             </div>
           </div>
         </SwiperSlide>

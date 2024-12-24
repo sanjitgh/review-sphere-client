@@ -103,7 +103,7 @@ const ReviewCard = ({ review, onDelete }) => {
       return toast.error("Add Rating Star!");
     }
 
-    // send data mongodb
+    // update data mongodb
     try {
       axios.put(`http://localhost:5000/review/${_id}`, updatedData);
       Swal.fire({
@@ -114,7 +114,7 @@ const ReviewCard = ({ review, onDelete }) => {
         timer: 1500,
       });
       setOpen(!open);
-      navigate("/")
+      navigate("/");
     } catch (error) {
       console.log(error);
     }

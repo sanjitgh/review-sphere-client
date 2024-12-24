@@ -19,9 +19,10 @@ const MyService = () => {
   }, []);
 
   const handleDelete = (id) => {
-    setService((prevService) => prevService.filter((service) => service._id !== id));
+    setService((prevService) =>
+      prevService.filter((service) => service._id !== id)
+    );
   };
-  
 
   return (
     <div className="py-20 bg-gray-50">
@@ -29,37 +30,41 @@ const MyService = () => {
         <h1 className="text-center font-bold text-2xl md:text-5xl mb-16">
           My Services
         </h1>
-        <div>
-          <div className="flex justify-center mb-5">
-            <div className="w-72">
-              <Input label="Search" />
+        {service.length > 0 ? (
+          <div>
+            <div className="flex justify-center mb-5">
+              <div className="w-72">
+                <Input label="Search" />
+              </div>
+            </div>
+            <div className="overflow-x-auto border shadow-lg shadow-green-50">
+              <table className="table">
+                <thead>
+                  <tr>
+                    <th>Image</th>
+                    <th>Company Name</th>
+                    <th>Title</th>
+                    <th>Website</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {service.map((service) => (
+                    <MyServiceCard
+                      key={service._id}
+                      service={service}
+                      onDelete={handleDelete}
+                    ></MyServiceCard>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
-          <div className="overflow-x-auto border shadow-lg shadow-green-50">
-            <table className="table">
-              <thead>
-                <tr>
-                  <th>Image</th>
-                  <th>Company Name</th>
-                  <th>Title</th>
-                  <th>Website</th>
-                  <th>Category</th>
-                  <th>Price</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {service.map((service) => (
-                  <MyServiceCard
-                    key={service._id}
-                    service={service}
-                    onDelete={handleDelete} 
-                  ></MyServiceCard>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
+        ) : (
+          <p className="text-center text-2xl font-semibold">No Service Found</p>
+        )}
       </div>
     </div>
   );
