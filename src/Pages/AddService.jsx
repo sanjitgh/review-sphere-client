@@ -65,9 +65,9 @@ const AddService = () => {
       <div className="min-h-[800px] flex justify-center items-center bg-relative">
         <form
           onSubmit={handleService}
-          className="w-[1000px] mx-auto px-3 border shadow-xlrounded z-10 my-16 "
+          className="w-[1000px] mx-auto px-3 border shadow-xl shadow-green-50 rounded z-10 my-16 "
         >
-          <h1 className="text-2xl md:text-5xl font-bold text-center pt-10 logo">
+          <h1 className="text-2xl md:text-5xl font-bold text-center pt-10">
             Add Service Here
           </h1>
           <div className="grid md:grid-cols-2 gap-5 md:p-10">
@@ -200,7 +200,7 @@ const AddService = () => {
               />
             </label>
 
-            {/* Price */}
+            {/* description */}
             <label className="form-control col-span-2 w-full">
               <div className="label">
                 <span className="label-text text-black text-base">

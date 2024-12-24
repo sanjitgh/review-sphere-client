@@ -1,13 +1,9 @@
-html {
-  overflow-x: hidden;
-  overflow-y: scroll
-}
-
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Yuji+Mai&display=swap");
 
 body {
   font-family: "Open Sans", sans-serif;
+  overflow-x: hidden;
 }
 
 .swiper-button-next,
