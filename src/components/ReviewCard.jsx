@@ -28,6 +28,7 @@ const ReviewCard = ({ review, onDelete }) => {
     currentUserProfileImage,
   } = review;
 
+
   const handelDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",

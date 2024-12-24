@@ -1,16 +1,23 @@
 import { HiOutlineTrash } from "react-icons/hi2";
 import { FiEdit3 } from "react-icons/fi";
-import { Avatar, Chip } from "@material-tailwind/react";
 import DatePicker from "react-datepicker";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useState } from "react";
-import { Dialog, DialogHeader, IconButton } from "@material-tailwind/react";
+import { useNavigate } from "react-router-dom";
+import {
+  Dialog,
+  DialogHeader,
+  IconButton,
+  Avatar,
+  Chip,
+} from "@material-tailwind/react";
 const MyServiceCard = ({ service, onDelete }) => {
   const [startDate, setStartDate] = useState(new Date());
   const [data, setData] = useState(null);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(!open);
+  const navigate = useNavigate();
 
   const {
     _id,
@@ -55,7 +62,6 @@ const MyServiceCard = ({ service, onDelete }) => {
       setData(res.data);
       setStartDate(new Date(res.data.date));
       handleOpen();
-      
     });
   };
 
@@ -72,7 +78,7 @@ const MyServiceCard = ({ service, onDelete }) => {
     const date = startDate;
     const description = form.description.value;
 
-    const data = {
+    const updatedData = {
       email,
       image,
       title,
@@ -86,16 +92,16 @@ const MyServiceCard = ({ service, onDelete }) => {
 
     // send data mongodb
     try {
-      axios.put(`http://localhost:5000/service/${_id}`, data);
+      axios.put(`http://localhost:5000/service/${_id}`, updatedData);
       Swal.fire({
         position: "top-center",
         icon: "success",
-        title: "Your work has been saved",
+        title: "Your service updated successfully",
         showConfirmButton: false,
         timer: 1500,
       });
       setOpen(!open);
-
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -213,6 +219,7 @@ const MyServiceCard = ({ service, onDelete }) => {
                       type="text"
                       autoComplete="off"
                       required
+                      disabled
                       placeholder="Title"
                       className="input input-bordered w-full  focus:outline-none rounded-none placeholder-gray-300"
                     />
@@ -306,7 +313,7 @@ const MyServiceCard = ({ service, onDelete }) => {
                     <DatePicker
                       defaultValue={startDate}
                       selected={startDate}
-                      onChange={(date) => setStartDate(data?.date)}
+                      onChange={(date) => setStartDate(date)}
                       className="select select-bordered w-full focus:outline-none rounded-none placeholder-gray-300"
                     />
                   </label>
