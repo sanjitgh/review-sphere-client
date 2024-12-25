@@ -67,7 +67,7 @@ const ReviewCard = ({ review, onDelete }) => {
           });
           onDelete(id);
         } catch (error) {
-          console.log(error);
+          // console.log(error);
         }
       }
     });
@@ -116,7 +116,7 @@ const ReviewCard = ({ review, onDelete }) => {
       setOpen(!open);
       navigate("/");
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 

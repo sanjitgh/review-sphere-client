@@ -10,9 +10,11 @@ import toast from "react-hot-toast";
 const ServiceDetails = () => {
   const [service, setService] = useState({});
   const navigate = useNavigate();
+
   useEffect(() => {
     document.title = `${service?.title} | ReviewSphere`;
   }, [service]);
+  
   const { id } = useParams();
   const { user } = useAuth();
   const [rating, setRating] = useState(0);
@@ -78,7 +80,7 @@ const ServiceDetails = () => {
         navigate('/my-reviews')
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
   };
 

@@ -51,7 +51,7 @@ const MyServiceCard = ({ service, onDelete }) => {
           });
           onDelete(id);
         } catch (error) {
-          console.log(error);
+          // console.log(error);
         }
       }
     });
@@ -103,7 +103,7 @@ const MyServiceCard = ({ service, onDelete }) => {
       setOpen(!open);
       navigate("/");
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
