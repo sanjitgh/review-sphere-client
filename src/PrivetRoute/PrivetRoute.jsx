@@ -9,7 +9,7 @@ const PrivetRoute = ({ children }) => {
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-[95vh]">
-         <RingLoader color={"#000000"} size={70} />
+         <RingLoader color={"#4CAF50"} size={70} />
       </div>
     );
   }

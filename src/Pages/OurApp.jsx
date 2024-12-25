@@ -18,13 +18,15 @@ const OurApp = () => {
               Download now and start exploring.
             </p>
             <div className="mt-4">
-              <Button
-                className="flex items-center gap-2 bg-green-500"
-                variant="filled"
-              >
-                <IoLogoGooglePlaystore />
-                Download on App Store
-              </Button>
+              <a href="https://play.google.com" target="_blank">
+                <Button
+                  className="flex items-center gap-2 bg-green-500"
+                  variant="filled"
+                >
+                  <IoLogoGooglePlaystore />
+                  Download on App Store
+                </Button>
+              </a>
             </div>
           </div>
         </div>
