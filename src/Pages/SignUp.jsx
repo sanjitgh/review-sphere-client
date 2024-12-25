@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provaider/AuthProvaider";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 const SignUp = () => {
   const { createUser, manageProfile, user, setUser } = useContext(AuthContext);
@@ -14,6 +15,12 @@ const SignUp = () => {
     const image = form.image.value;
     const email = form.email.value;
     const password = form.password.value;
+
+    const newUser = {
+      name,
+      image,
+      email,
+    };
 
     if (password.length < 6) {
       return toast.error("You need at least 6 character.");
@@ -34,11 +41,20 @@ const SignUp = () => {
             photoURL: image,
             email: email,
           });
+          // save user info to the database
+          axios
+            .post("http://localhost:5000/user", newUser)
+            .then((res) => {
+              console.log(res.data);
+            })
+            .catch((error) => {
+              console.log(error);
+            });
         });
         navigate("/");
       })
       .catch((error) => {
-        console.log(error.message);
+        toast.error('This email already used.')
       });
   };
 

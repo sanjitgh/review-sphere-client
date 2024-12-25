@@ -32,7 +32,7 @@ const Banner = () => {
                   ease: "easeInOut",
                 }}
               >
-                <Button className="bg-green-500 py-4 hover:bg-green-600 rounded-none mt-6">
+                <Button className="bg-green-500 py-4 hover:bg-green-600 rounded-none mt-6" variant="filled">
                   <span className="flex items-center gap-2">
                     Start Exploring
                     <MdOutlineKeyboardDoubleArrowDown />
@@ -63,7 +63,7 @@ const Banner = () => {
                   ease: "easeInOut",
                 }}
               >
-                <Button className="bg-green-500 py-4 hover:bg-green-600 rounded-none mt-6">
+                <Button className="bg-green-500 py-4 hover:bg-green-600 rounded-none mt-6" variant="filled">
                   <span className="flex items-center gap-2">
                     Get Started Now
                     <MdOutlineKeyboardDoubleArrowDown />
@@ -94,7 +94,7 @@ const Banner = () => {
                   ease: "easeInOut",
                 }}
               >
-                <Button className="bg-green-500 py-4 hover:bg-green-600 rounded-none mt-6">
+                <Button className="bg-green-500 py-4 hover:bg-green-600 rounded-none mt-6" variant="filled">
                   <span className="flex items-center gap-2">
                     Write a Review
                     <MdOutlineKeyboardDoubleArrowDown />

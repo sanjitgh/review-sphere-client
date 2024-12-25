@@ -16,7 +16,7 @@ const ImproveBusiness = () => {
               solutions. Empower your team, enhance productivity, and achieve
               your goals with ease.
             </p>
-            <Button variant="contained" color="primary" size="large" className="bg-green-500">
+            <Button  variant="contained" color="primary" size="large" className="bg-green-500">
               Learn More
             </Button>
           </div>

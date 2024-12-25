@@ -153,7 +153,7 @@ const ServiceDetails = () => {
             />
           </div>
           <div className="text-end">
-            <Button type="submit" className="bg-green-500">
+            <Button variant="filled" type="submit" className="bg-green-500">
               Add Review
             </Button>
           </div>

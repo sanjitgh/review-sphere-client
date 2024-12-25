@@ -232,7 +232,7 @@ const ReviewCard = ({ review, onDelete }) => {
               />
             </div>
             <div className="text-end">
-              <Button type="submit" className="bg-green-500">
+              <Button variant="filled" type="submit" className="bg-green-500">
                 Update Review
               </Button>
             </div>

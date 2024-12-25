@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provaider/AuthProvaider";
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 const Login = () => {
   const { handelLogin, handelGoogleLogin } = useContext(AuthContext);
@@ -45,17 +46,13 @@ const Login = () => {
       };
 
       // save user info to the database
-      fetch("https://orchid-backend-server.vercel.app/users", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(newUser),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          // console.log(data);
-        });
+        axios.post('http://localhost:5000/user', newUser)
+        .then(res => {
+          console.log(res.data);
+        })
+        .catch(error =>{
+          console.log(error);
+        })
 
       if (location.state) {
         navigate(location.state);
@@ -125,7 +122,7 @@ const Login = () => {
               </Link>
             </div>
             <div className="form-control mt-6">
-              <button className="btn bg-green-500 border-white hover:bg-green-600 text-white text-base font-medium">
+              <button className="btn bg-green-500 border-white hover:bg-green-600 text-white text-base font-medium" variant="filled">
                 Login
               </button>
             </div>

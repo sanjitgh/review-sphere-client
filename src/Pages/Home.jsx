@@ -4,6 +4,7 @@ import FeaturedService from "../components/FeaturedService";
 import OurParters from "./OurParters";
 import ImproveBusiness from "./ImproveBusiness";
 import OurApp from "./OurApp";
+import Activity from "../components/Activity";
 
 const Home = () => {
   useEffect(() => {
@@ -15,6 +16,7 @@ const Home = () => {
       <FeaturedService></FeaturedService>
       <OurParters></OurParters>
       <ImproveBusiness></ImproveBusiness>
+      <Activity></Activity>
       <OurApp></OurApp>
     </>
   );
