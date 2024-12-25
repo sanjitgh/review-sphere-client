@@ -47,7 +47,6 @@ const AuthProvaider = ({ children }) => {
   };
 
   const userInfo = {
-    user,
     loading,
     createUser,
     handelLogin,
@@ -65,7 +64,7 @@ const AuthProvaider = ({ children }) => {
 
         // generate token
         await axios.post(
-          "http://localhost:5000/jwt",
+          "https://backend-sigma-tawny.vercel.app/jwt",
           { email: currentUser?.email },
           { withCredentials: true }
         );
@@ -73,7 +72,7 @@ const AuthProvaider = ({ children }) => {
         setUser(null);
         setLoading(false);
         // remove token
-        await axios.get("http://localhost:5000/logout", {
+        await axios.get("https://backend-sigma-tawny.vercel.app/logout", {
           withCredentials: true,
         });
       }     

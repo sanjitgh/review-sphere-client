@@ -45,7 +45,7 @@ const Login = () => {
       };
 
       // save user info to the database
-      axios.post("http://localhost:5000/user", newUser);
+      axios.post("https://backend-sigma-tawny.vercel.app/user", newUser);
 
       if (location.state) {
         navigate(location.state);
