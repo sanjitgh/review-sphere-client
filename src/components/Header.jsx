@@ -109,7 +109,7 @@ const Header = () => {
             {links}
           </ul>
         </div>
-        <Link to={"/"} className="text-3xl text-gray-900 cursor-default font-bold logo">
+        <Link to={"/"} className="text-xl sm:text-3xl text-gray-900 cursor-default font-bold logo">
           ReviewSphere
         </Link>
       </div>

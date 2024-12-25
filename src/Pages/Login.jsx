@@ -38,7 +38,6 @@ const Login = () => {
       const name = res.user.displayName;
       const image = res.user.photoURL;
       const email = res.user.email;
-
       const newUser = {
         name,
         image,
@@ -46,13 +45,7 @@ const Login = () => {
       };
 
       // save user info to the database
-        axios.post('http://localhost:5000/user', newUser)
-        .then(res => {
-          console.log(res.data);
-        })
-        .catch(error =>{
-          console.log(error);
-        })
+      axios.post("http://localhost:5000/user", newUser);
 
       if (location.state) {
         navigate(location.state);
@@ -110,7 +103,7 @@ const Login = () => {
                 Forgot password?
               </a>
             </label>
-            
+
             <div className="my-3">
               {/* <h3 className="text-lg font-medium mb-3">Socail Link</h3> */}
               <Link
@@ -118,19 +111,26 @@ const Login = () => {
                 className="text-base flex items-center gap-3"
               >
                 Login With Google
-                <img src="https://docs.material-tailwind.com/icons/google.svg" alt="metamask" className="h-6 w-6" />
+                <img
+                  src="https://docs.material-tailwind.com/icons/google.svg"
+                  alt="metamask"
+                  className="h-6 w-6"
+                />
               </Link>
             </div>
             <div className="form-control mt-6">
-              <button className="btn bg-green-500 border-white hover:bg-green-600 text-white text-base font-medium" variant="filled">
+              <button
+                className="btn bg-green-500 border-white hover:bg-green-600 text-white text-base font-medium"
+                variant="filled"
+              >
                 Login
               </button>
             </div>
             <div className="mt-4">
               <p>
-                Are you new here? 
+                Are you new here?
                 <Link to={"/signup"}>
-                  <b>  Register</b>
+                  <b> Register</b>
                 </Link>
               </p>
             </div>

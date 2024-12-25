@@ -42,19 +42,12 @@ const SignUp = () => {
             email: email,
           });
           // save user info to the database
-          axios
-            .post("http://localhost:5000/user", newUser)
-            .then((res) => {
-              console.log(res.data);
-            })
-            .catch((error) => {
-              console.log(error);
-            });
+          axios.post("http://localhost:5000/user", newUser);
         });
         navigate("/");
       })
       .catch((error) => {
-        toast.error('This email already used.')
+        toast.error("This email already used.");
       });
   };
 

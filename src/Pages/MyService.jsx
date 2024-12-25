@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 import useAuth from "../hook/useAuth";
 import MyServiceCard from "../components/MyServiceCard";
 import { Input } from "@material-tailwind/react";
+import useAxiosSecure from "../hook/UseAxiosSecure";
 
 const MyService = () => {
+  const axiosSecure = useAxiosSecure();
   const [service, setService] = useState([]);
   const [search, setSearch] = useState("");
   const { user } = useAuth();
@@ -14,8 +16,8 @@ const MyService = () => {
     document.title = "My Service | ReviewSphere";
 
     const fetchMyService = async () => {
-      const { data } = await axios.get(
-        `http://localhost:5000/service?email=${user?.email}&search=${search}`
+      const { data } = await axiosSecure.get(
+        `/service?email=${user?.email}&search=${search}`
       );
       setService(data);
     };

@@ -13,7 +13,8 @@ const Services = () => {
     // get service data from db
     const fetchAllServices = async () => {
       const { data } = await axios.get(
-        `http://localhost:5000/services?filter=${filter}&search=${search}`
+        `http://localhost:5000/services?filter=${filter}&search=${search}`,
+       
       );
       setService(data);
     };
@@ -28,7 +29,7 @@ const Services = () => {
             All Services
           </h1>
           <div className="sm:flex justify-end items-center gap-10 mb-10 ">
-            <div className="sm:w-3/12 w-full">
+            <div className="sm:w-3/12 w-full mb-5 md:mb-0">
               <Select
                 onChange={(e) => setFilter(e)}
                 variant="standard"

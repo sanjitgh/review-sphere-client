@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from "react";
 import useAuth from "../hook/useAuth";
-import axios from "axios";
 import ReviewCard from "../components/ReviewCard";
+import useAxiosSecure from "../hook/UseAxiosSecure";
 
 const MyReview = () => {
   const [review, setReview] = useState([]);
   const { user } = useAuth();
+  const axiosSecure = useAxiosSecure();
 
   useEffect(() => {
     document.title = "My Reviews | ReviewSphere";
-    axios
-      .get(`http://localhost:5000/review?email=${user?.email}`)
-      .then((res) => {
-        setReview(res.data);
-      });
+
+    const fetchMyReview = async () => {
+      const { data } = await axiosSecure.get(`/review?email=${user?.email}`);
+      setReview(data);
+    };
+    fetchMyReview();
   }, [user?.email]);
 
   const handleDelete = (id) => {
@@ -42,7 +44,9 @@ const MyReview = () => {
             ))}
           </div>
         ) : (
-          <p className="text-center text-2xl font-semibold">No Review Found</p>
+          <p className="text-center text-2xl font-semibold">
+            You are not review any service!
+          </p>
         )}
       </div>
     </div>

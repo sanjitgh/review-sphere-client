@@ -18,9 +18,9 @@ const FeaturedService = () => {
           Featured Service
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-        {service.map((service) => (
-          <ServiceCard key={service._id} service={service}></ServiceCard>
-        ))}
+          {service.map((service) => (
+            <ServiceCard key={service._id} service={service}></ServiceCard>
+          ))}
         </div>
       </div>
     </div>
