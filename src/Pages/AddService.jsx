@@ -40,7 +40,7 @@ const AddService = () => {
 
     // send data mongodb
     axios
-      .post("http://localhost:5000/service", data)
+      .post("https://backend-sigma-tawny.vercel.app/service", data)
       .then((res) => {
         Swal.fire({
           position: "top-center",

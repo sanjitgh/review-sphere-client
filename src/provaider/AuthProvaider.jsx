@@ -64,14 +64,14 @@ const AuthProvaider = ({ children }) => {
       if (currentUser?.email) {
         const user = { email: currentUser.email };
         // generate token
-        await axios.post("http://localhost:5000/jwt", user, {
+        await axios.post("https://backend-sigma-tawny.vercel.app/jwt", user, {
           withCredentials: true,
         });
       } else {
         setUser(null);
         setLoading(false);
         // remove token
-        await axios.get("http://localhost:5000/logout", {
+        await axios.get("https://backend-sigma-tawny.vercel.app/logout", {
           withCredentials: true,
         });
       }

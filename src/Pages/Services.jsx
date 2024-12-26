@@ -13,7 +13,7 @@ const Services = () => {
     // get service data from db
     const fetchAllServices = async () => {
       const { data } = await axios.get(
-        `http://localhost:5000/services?filter=${filter}&search=${search}`,
+        `https://backend-sigma-tawny.vercel.app/services?filter=${filter}&search=${search}`,
        
       );
       setService(data);

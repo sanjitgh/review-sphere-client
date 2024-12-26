@@ -33,21 +33,15 @@ const MyReview = () => {
         <p className="mb-4">
           <span className="font-semibold">Total Review :</span> {review.length}
         </p>
-        {review.length > 0 ? (
-          <div className="grid grid-cols-1 gap-8">
-            {review.map((review) => (
-              <ReviewCard
-                key={review._id}
-                review={review}
-                onDelete={handleDelete}
-              ></ReviewCard>
-            ))}
-          </div>
-        ) : (
-          <p className="text-center text-2xl font-semibold">
-            You are not review any service!
-          </p>
-        )}
+        <div className="grid grid-cols-1 gap-8">
+          {review.map((review) => (
+            <ReviewCard
+              key={review._id}
+              review={review}
+              onDelete={handleDelete}
+            ></ReviewCard>
+          ))}
+        </div>
       </div>
     </div>
   );
