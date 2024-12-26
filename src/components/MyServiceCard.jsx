@@ -43,7 +43,7 @@ const MyServiceCard = ({ service, onDelete }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         try {
-          axios.delete(`https://backend-sigma-tawny.vercel.app/my-service/${id}`);
+          axios.delete(`http://localhost:5000/my-service/${id}`);
           Swal.fire({
             title: "Deleted!",
             text: "Your service has been deleted.",
@@ -58,7 +58,7 @@ const MyServiceCard = ({ service, onDelete }) => {
   };
 
   const handelModal = (id) => {
-    axios.get(`https://backend-sigma-tawny.vercel.app/service/${id}`).then((res) => {
+    axios.get(`http://localhost:5000/service/${id}`).then((res) => {
       setData(res.data);
       setStartDate(new Date(res.data.date));
       handleOpen();
@@ -92,7 +92,7 @@ const MyServiceCard = ({ service, onDelete }) => {
 
     // update data mongodb
     try {
-      axios.put(`https://backend-sigma-tawny.vercel.app/service/${_id}`, updatedData);
+      axios.put(`http://localhost:5000/service/${_id}`, updatedData);
       Swal.fire({
         position: "top-center",
         icon: "success",

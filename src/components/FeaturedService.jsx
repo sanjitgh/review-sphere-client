@@ -7,7 +7,7 @@ const FeaturedService = () => {
 
   // get service data from db
   useEffect(() => {
-    axios.get("https://backend-sigma-tawny.vercel.app/featuredService").then((res) => {
+    axios.get("http://localhost:5000/featuredService").then((res) => {
       setService(res.data);
     });
   }, []);

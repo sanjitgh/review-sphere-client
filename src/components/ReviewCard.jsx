@@ -8,13 +8,10 @@ import {
   Textarea,
 } from "@material-tailwind/react";
 import {
-  Input,
   Button,
   Dialog,
   IconButton,
-  DialogBody,
   DialogHeader,
-  DialogFooter,
 } from "@material-tailwind/react";
 import axios from "axios";
 import { format } from "date-fns";
@@ -59,7 +56,9 @@ const ReviewCard = ({ review, onDelete }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         try {
-          axios.delete(`https://backend-sigma-tawny.vercel.app/my-review/${id}`);
+          axios.delete(
+            `http://localhost:5000/my-review/${id}`
+          );
           Swal.fire({
             title: "Deleted!",
             text: "Your service has been deleted.",
@@ -74,10 +73,12 @@ const ReviewCard = ({ review, onDelete }) => {
   };
 
   const handelModal = (id) => {
-    axios.get(`https://backend-sigma-tawny.vercel.app/review/${id}`).then((res) => {
-      setData(res.data);
-      handleOpen();
-    });
+    axios
+      .get(`http://localhost:5000/review/${id}`)
+      .then((res) => {
+        setData(res.data);
+        handleOpen();
+      });
   };
 
   const handleReview = (e) => {
@@ -105,7 +106,10 @@ const ReviewCard = ({ review, onDelete }) => {
 
     // update data mongodb
     try {
-      axios.put(`https://backend-sigma-tawny.vercel.app/review/${_id}`, updatedData);
+      axios.put(
+        `http://localhost:5000/review/${_id}`,
+        updatedData
+      );
       Swal.fire({
         position: "top-center",
         icon: "success",
