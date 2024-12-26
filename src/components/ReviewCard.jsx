@@ -25,7 +25,7 @@ import toast from "react-hot-toast";
 
 const ReviewCard = ({ review, onDelete }) => {
   const [data, setData] = useState(null);
-  const [ratings, setRatings] = useState(0);
+
   const [open, setOpen] = useState(false);
   const { user } = useAuth();
   const handleOpen = () => setOpen(!open);
@@ -43,6 +43,7 @@ const ReviewCard = ({ review, onDelete }) => {
     currentUserName,
     currentUserProfileImage,
   } = review;
+  const [ratings, setRatings] = useState(rating);
 
   const handelDelete = (id) => {
     Swal.fire({
@@ -56,9 +57,7 @@ const ReviewCard = ({ review, onDelete }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         try {
-          axios.delete(
-            `https://backend-sigma-tawny.vercel.app/my-review/${id}`
-          );
+          axios.delete(`https://backend-sigma-tawny.vercel.app/my-review/${id}`);
           Swal.fire({
             title: "Deleted!",
             text: "Your service has been deleted.",
@@ -73,12 +72,10 @@ const ReviewCard = ({ review, onDelete }) => {
   };
 
   const handelModal = (id) => {
-    axios
-      .get(`https://backend-sigma-tawny.vercel.app/review/${id}`)
-      .then((res) => {
-        setData(res.data);
-        handleOpen();
-      });
+    axios.get(`https://backend-sigma-tawny.vercel.app/review/${id}`).then((res) => {
+      setData(res.data);
+      handleOpen();
+    });
   };
 
   const handleReview = (e) => {
@@ -101,15 +98,12 @@ const ReviewCard = ({ review, onDelete }) => {
     };
 
     if (ratings === 0) {
-      return toast.error("Add Rating Star!");
+      return toast.error("Update Rating Star!");
     }
 
     // update data mongodb
     try {
-      axios.put(
-        `https://backend-sigma-tawny.vercel.app/review/${_id}`,
-        updatedData
-      );
+      axios.put(`https://backend-sigma-tawny.vercel.app/review/${_id}`, updatedData);
       Swal.fire({
         position: "top-center",
         icon: "success",

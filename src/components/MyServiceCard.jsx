@@ -111,7 +111,7 @@ const MyServiceCard = ({ service, onDelete }) => {
     <>
       <tr>
         <th>
-          <Avatar src={image} />;
+          <Avatar src={image} />
         </th>
         <td>{companyName.slice(0, 20)}</td>
         <td>{title.slice(0, 30)}</td>

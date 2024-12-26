@@ -71,9 +71,13 @@ const AuthProvaider = ({ children }) => {
         setUser(null);
         setLoading(false);
         // remove token
-        await axios.get("https://backend-sigma-tawny.vercel.app/logout", {
-          withCredentials: true,
-        });
+        await axios.post(
+          "https://backend-sigma-tawny.vercel.app/logout",
+          {},
+          {
+            withCredentials: true,
+          }
+        );
       }
       setLoading(false);
       return () => {
