@@ -1,43 +1,58 @@
 # ReviewSphere
 
-ReviewSphere is a service review system designed to help users view, add, update, and delete services with an intuitive interface. It allows users to share their opinions on services and make informed decisions based on others' reviews.
+**ReviewSphere** is a service review system designed to help users **view, add, update, and delete** services with an intuitive interface. Users can share their opinions on various services, helping others make informed decisions based on community feedback.
 
-### Key Features:
-- **View Service**: Explore detailed information about services and their ratings.
-- **Add Service**: Add a new service to the platform for others to review.
-- **Review**: Submit reviews and feedback about services.
-- **Update**: Edit your submitted service reviews.
-- **Delete**: Remove your reviews or services from the platform.
+## 🚀 Live Demo
+Check out the live application here: [ReviewSphere](https://reviewsphere-39258.web.app/)
 
-### Technology Stack:
-- **Frontend**: 
-  - **React** for building the UI components.
-  - **Material Tailwind** for UI components styled with Tailwind CSS.
-  - **React Router** for navigation and route management.
-  - **Motion** for animations and transitions.
-  - **React Icons** for icon support.
-  - **React Spinners** for loading indicators.
-  - **SweetAlert2** for stylish alerts.
-  - **Swiper** for carousel/sliders.
-  - **Date-fns** for handling dates and times.
+## 📌 Features
+- 🔍 **View Services** – Browse detailed service information and ratings.
+- ➕ **Add Service** – Contribute new services to the platform.
+- ✍ **Review Services** – Share your feedback and experiences.
+- 📝 **Update Reviews** – Modify your existing reviews.
+- ❌ **Delete Services & Reviews** – Remove unwanted entries from the system.
+- 🎨 **Responsive UI** – Built with modern UI components for a seamless experience.
 
-- **Backend**: 
-  - A RESTful API is built with Express.js to handle the service data.
+## 🛠️ Tech Stack
 
-- **Database**: 
-  - Data is stored in MongoDB to handle the services, reviews, and user data efficiently.
+### 🌐 Frontend:
+- **React** – Component-based UI framework.
+- **Material Tailwind** – UI components styled with Tailwind CSS.
+- **React Router** – Client-side routing and navigation.
+- **Motion** – Animation and transition effects.
+- **React Icons** – Popular icon library.
+- **React Spinners** – Loading indicators.
+- **SweetAlert2** – Stylish alert modals.
+- **Swiper** – Mobile-friendly carousels/sliders.
+- **Date-fns** – Utility functions for date handling.
 
-### NPM Packages:
-- `material-tailwind`: A Tailwind CSS component library with Material Design elements.
-- `axios`: Promise-based HTTP client for making requests to the backend.
-- `react-icons`: A library to use popular icons in React apps.
-- `motion`: Provides powerful animations for React components.
-- `react-counter`: A simple counter component for incrementing or decrementing values.
-- `react-router`: A declarative routing library for React.
-- `react-spinners`: A set of spinner components to indicate loading states.
-- `sweetalert2`: Beautiful, customizable, and accessible alerts for React.
-- `swiper`: A modern mobile touch slider with support for carousels.
-- `date-fns`: A utility library for working with dates and times.
+### 🔧 Backend:
+- **Express.js** – RESTful API to manage service data.
 
-### Live URL:
-Check out the live application at [ReviewSphere](https://reviewsphere-39258.web.app/)
+### 🗄️ Database:
+- **MongoDB** – Stores services, reviews, and user data efficiently.
+
+## 📦 NPM Packages
+The following **npm** packages are used in the project:
+
+| Package             | Description |
+|---------------------|-------------|
+| `material-tailwind` | Tailwind CSS components with Material Design |
+| `axios`            | HTTP client for API requests |
+| `react-icons`      | Library of popular icons for React apps |
+| `motion`          | Powerful animations for React components |
+| `react-counter`   | Simple counter component |
+| `react-router`    | Declarative routing for React apps |
+| `react-spinners`  | Loading spinner components |
+| `sweetalert2`     | Customizable alert dialogs |
+| `swiper`          | Mobile-friendly slider/carousel library |
+| `date-fns`        | Utility functions for working with dates |
+
+## 🏗️ Installation & Setup
+
+Follow these steps to set up **ReviewSphere** locally:
+
+### 1️⃣ Clone the Repository
+```sh
+git clone https://github.com/sanjitgh/review-sphere-client.git
+cd reviewsphere
