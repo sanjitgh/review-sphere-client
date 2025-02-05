@@ -52,6 +52,10 @@ The following **npm** packages are used in the project:
 
 Follow these steps to set up **ReviewSphere** locally:
 
+
+## 🏗️ Live Link:
+https://reviewsphere-39258.web.app/
+
 ### 1️⃣ Clone the Repository
 ```sh
 git clone https://github.com/sanjitgh/review-sphere-client.git
