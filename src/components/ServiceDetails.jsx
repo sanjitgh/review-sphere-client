@@ -31,7 +31,7 @@ const ServiceDetails = () => {
   } = service;
 
   const getServiceData = async () => {
-    const { data } = await axios.get(`https://backend-sigma-tawny.vercel.app/service/${id}`);
+    const { data } = await axios.get(`https://review-brown.vercel.app/service/${id}`);
     setService(data);
   };
 
@@ -66,7 +66,7 @@ const ServiceDetails = () => {
 
     // send review in db
     axios
-      .post("https://backend-sigma-tawny.vercel.app/review", data)
+      .post("https://review-brown.vercel.app/review", data)
       .then((res) => {
         Swal.fire({
           position: "top-center",

@@ -57,7 +57,7 @@ const ReviewCard = ({ review, onDelete }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         try {
-          axios.delete(`https://backend-sigma-tawny.vercel.app/my-review/${id}`);
+          axios.delete(`https://review-brown.vercel.app/my-review/${id}`);
           Swal.fire({
             title: "Deleted!",
             text: "Your service has been deleted.",
@@ -72,7 +72,7 @@ const ReviewCard = ({ review, onDelete }) => {
   };
 
   const handelModal = (id) => {
-    axios.get(`https://backend-sigma-tawny.vercel.app/review/${id}`).then((res) => {
+    axios.get(`https://review-brown.vercel.app/review/${id}`).then((res) => {
       setData(res.data);
       handleOpen();
     });
@@ -103,7 +103,7 @@ const ReviewCard = ({ review, onDelete }) => {
 
     // update data mongodb
     try {
-      axios.put(`https://backend-sigma-tawny.vercel.app/review/${_id}`, updatedData);
+      axios.put(`https://review-brown.vercel.app/review/${_id}`, updatedData);
       Swal.fire({
         position: "top-center",
         icon: "success",

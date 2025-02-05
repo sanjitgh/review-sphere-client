@@ -64,7 +64,7 @@ const AuthProvaider = ({ children }) => {
       if (currentUser?.email) {
         const user = { email: currentUser.email };
         // generate token
-        await axios.post("https://backend-sigma-tawny.vercel.app/jwt", user, {
+        await axios.post("https://review-brown.vercel.app/jwt", user, {
           withCredentials: true,
         });
       } else {
@@ -72,7 +72,7 @@ const AuthProvaider = ({ children }) => {
         setLoading(false);
         // remove token
         await axios.post(
-          "https://backend-sigma-tawny.vercel.app/logout",
+          "https://review-brown.vercel.app/logout",
           {},
           {
             withCredentials: true,

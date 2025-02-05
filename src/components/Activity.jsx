@@ -14,19 +14,19 @@ const Activity = () => {
   const [users, setusers] = useState([]);
 
   useEffect(() => {
-    axios.get("https://backend-sigma-tawny.vercel.app/services").then((res) => {
+    axios.get("https://review-brown.vercel.app/services").then((res) => {
       setService(res.data);
     });
   }, []);
 
   useEffect(() => {
-    axios.get("https://backend-sigma-tawny.vercel.app/reviews").then((res) => {
+    axios.get("https://review-brown.vercel.app/reviews").then((res) => {
       setreviews(res.data);
     });
   }, []);
 
   useEffect(() => {
-    axios.get("https://backend-sigma-tawny.vercel.app/users").then((res) => {
+    axios.get("https://review-brown.vercel.app/users").then((res) => {
       setusers(res.data);
     });
   }, []);

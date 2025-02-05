@@ -42,7 +42,7 @@ const SignUp = () => {
             email: email,
           });
           // save user info to the database
-          axios.post("https://backend-sigma-tawny.vercel.app/user", newUser);
+          axios.post("https://review-brown.vercel.app/user", newUser);
         });
         navigate("/");
       })
