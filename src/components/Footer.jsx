@@ -53,16 +53,10 @@ const Footer = () => {
               Service
             </Link>
             <Link
-              to={"/"}
+              to={"/my-reviews"}
               className="text-base font-normal text-gray-600 hover:text-gray-700 transition-all"
             >
-              Newsletter
-            </Link>
-            <Link
-              to={"/"}
-              className="text-base font-normal text-gray-600 hover:text-gray-700 transition-all"
-            >
-              Blog
+              Reviews
             </Link>
           </nav>
           <nav>

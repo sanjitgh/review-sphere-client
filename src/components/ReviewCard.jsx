@@ -123,7 +123,7 @@ const ReviewCard = ({ review, onDelete }) => {
       <Card
         color="transparent"
         shadow={false}
-        className="w-full border p-5 pb-0 shadow-xl shadow-green-50"
+        className="w-full border p-5 pb-0 shadow-xl shadow-green-50 rounded"
       >
         <CardHeader
           color="transparent"

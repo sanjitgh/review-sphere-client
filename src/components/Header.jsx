@@ -11,9 +11,12 @@ import {
   Avatar,
   Typography,
 } from "@material-tailwind/react";
+import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
+import { ThemeContext } from "../DarkModeProvaider/DarkModeProvaider";
 
 const Header = () => {
   const { handelLogout, user } = useContext(AuthContext);
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   const links = (
     <>
@@ -123,7 +126,14 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-end gap-3 items-center">
-        <div className="relative text-2xl cursor-pointer flex items-center gap-2 top-0">
+        <div className="relative text-2xl cursor-pointer flex items-center gap-4 top-0">
+          <div>
+            {/* <MdOutlineLightMode />
+            <MdOutlineDarkMode /> */}
+            <button onClick={toggleTheme}>
+              Toggle {theme === "dark" ? "Light" : "Dark"} Mode
+            </button>
+          </div>
           {user ? (
             <>
               <Menu>
@@ -136,8 +146,8 @@ const Header = () => {
                     src={user?.photoURL}
                   />
                 </MenuHandler>
-                <MenuList className="mt-3 -ml-3 bg-green-600 text-white border-none">
-                  <MenuItem className="flex items-center gap-2">
+                <MenuList className="mt-3 -ml-3 lg:-ml-5 bg-green-600 text-white border-none ">
+                  <MenuItem className="flex items-center gap-2 hover:!bg-transparent hover:!text-white">
                     <svg
                       width="16"
                       height="14"
@@ -155,7 +165,7 @@ const Header = () => {
                     <Typography
                       onClick={handelLogout}
                       variant="small"
-                      className="font-medium"
+                      className="font-medium "
                     >
                       Logout
                     </Typography>
@@ -166,7 +176,9 @@ const Header = () => {
           ) : (
             <>
               <div className="avatar">
-                <FaUserCircle className="text-5xl text-green-600" />
+                <Link to={"/login"}>
+                  <FaUserCircle className="text-5xl text-green-600" />
+                </Link>
               </div>
             </>
           )}

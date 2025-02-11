@@ -21,13 +21,11 @@ const MyServiceCard = ({ service, onDelete }) => {
 
   const {
     _id,
-    email,
     image,
     title,
     website,
     price,
     category,
-    description,
     companyName,
   } = service;
 
@@ -121,7 +119,7 @@ const MyServiceCard = ({ service, onDelete }) => {
           </a>
         </td>
         <td>
-          <Chip className="bg-green-500 text-center w-20" value={category} />
+          <Chip className="bg-green-600 text-center w-20 rounded" value={category} />
         </td>
         <td>$ {price}</td>
         <td>
