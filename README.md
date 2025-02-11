@@ -15,7 +15,6 @@ Check out the live application here: [ReviewSphere](https://reviewsphere-39258.w
 - ❌ **Delete Services & Reviews** – Remove unwanted entries from the system.
 - 🎨 **Responsive UI** – Built with modern UI components for a seamless experience.
 
-## 🛠️ Tech Stack
 
 ### 🌐 Frontend:
 
