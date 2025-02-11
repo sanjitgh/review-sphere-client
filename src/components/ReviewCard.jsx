@@ -123,7 +123,7 @@ const ReviewCard = ({ review, onDelete }) => {
       <Card
         color="transparent"
         shadow={false}
-        className="w-full border p-5 pb-0 shadow-xl shadow-green-50 rounded"
+        className="w-full border p-5 pb-0 shadow-xl shadow-green-50 rounded dark:shadow-blue-gray-800 dark:border-blue-gray-800"
       >
         <CardHeader
           color="transparent"
@@ -134,7 +134,11 @@ const ReviewCard = ({ review, onDelete }) => {
           <Avatar size="lg" variant="circular" src={currentUserProfileImage} />
           <div className="flex w-full flex-col gap-0.5">
             <div className="flex items-center justify-between">
-              <Typography variant="h5" color="blue-gray">
+              <Typography
+                variant="h5"
+                color="blue-gray"
+                className="dark:text-gray-200"
+              >
                 {currentUserName}
               </Typography>
               <div className="5 flex items-center gap-0">
@@ -147,19 +151,19 @@ const ReviewCard = ({ review, onDelete }) => {
                 />
               </div>
             </div>
-            <Typography color="blue-gray">
+            <Typography color="blue-gray" className="dark:text-gray-400">
               {format(new Date(postedDate), "Pp")}
             </Typography>
           </div>
         </CardHeader>
-        <CardBody className="mb-6 p-0">
+        <CardBody className="mb-6 p-0 dark:text-gray-400">
           <Typography>{comment.slice(0, 200)}...</Typography>
 
-          <div className="divider"></div>
+          <div className="w-full h-[1px] mt-3 mb-4 bg-blue-gray-100 dark:bg-blue-gray-700"></div>
           <div className="flex items-center justify-between gap-4">
             <Avatar size="lg" variant="rounded" src={image} />
             <Link to={`/service/${postId}`} className="flex-1">
-              <h1 className="text-black font-medium">{title}</h1>
+              <h1 className="text-black font-medium dark:text-gray-200">{title}</h1>
               <p>{website}</p>
             </Link>
           </div>
@@ -177,7 +181,7 @@ const ReviewCard = ({ review, onDelete }) => {
         </CardBody>
       </Card>
 
-      <Dialog size="lg" open={open} handler={handleOpen}>
+      <Dialog size="lg" open={open} handler={handleOpen} className="dark:bg-blue-gray-900 dark:text-gray-200 rounded">
         <DialogHeader className="justify-end pt-3">
           <IconButton
             color="blue-gray"
@@ -216,6 +220,7 @@ const ReviewCard = ({ review, onDelete }) => {
                 style={{ height: 200 }}
                 success
                 required
+                className="dark:text-gray-400"
               />
             </div>
             <div className="flex items-center gap-2">

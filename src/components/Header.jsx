@@ -22,7 +22,7 @@ const Header = () => {
     <>
       <NavLink
         className={({ isActive }) =>
-          isActive ? "border-b-green-600 border-b" : ""
+          isActive ? "border-b-green-600 border-b dark:text-white" : "dark:text-white"
         }
         to={"/"}
       >
@@ -30,7 +30,7 @@ const Header = () => {
       </NavLink>
       <NavLink
         className={({ isActive }) =>
-          isActive ? "border-b-green-600 border-b" : ""
+          isActive ? "border-b-green-600 border-b dark:text-white" : "dark:text-white"
         }
         to={"/services"}
       >
@@ -41,7 +41,7 @@ const Header = () => {
         <>
           <NavLink
             className={({ isActive }) =>
-              isActive ? "border-b-green-600 border-b" : ""
+              isActive ? "border-b-green-600 border-b dark:text-white" : "dark:text-white"
             }
             to={"/add-service"}
           >
@@ -49,7 +49,7 @@ const Header = () => {
           </NavLink>
           <NavLink
             className={({ isActive }) =>
-              isActive ? "border-b-green-600 border-b" : ""
+              isActive ? "border-b-green-600 border-b dark:text-white" : "dark:text-white"
             }
             to={"/my-service"}
           >
@@ -57,7 +57,7 @@ const Header = () => {
           </NavLink>
           <NavLink
             className={({ isActive }) =>
-              isActive ? "border-b-green-600 border-b" : ""
+              isActive ? "border-b-green-600 border-b dark:text-white" : "dark:text-white"
             }
             to={"/my-reviews"}
           >
@@ -68,7 +68,7 @@ const Header = () => {
         <>
           <NavLink
             className={({ isActive }) =>
-              isActive ? "border-b-green-600 border-b" : ""
+              isActive ? "border-b-green-600 border-b dark:text-white" : "dark:text-white"
             }
             to={"/login"}
           >
@@ -76,7 +76,7 @@ const Header = () => {
           </NavLink>
           <NavLink
             className={({ isActive }) =>
-              isActive ? "border-b-green-600 border-b" : ""
+              isActive ? "border-b-green-600 border-b dark:text-white" : "dark:text-white"
             }
             to={"/signup"}
           >
@@ -87,7 +87,7 @@ const Header = () => {
     </>
   );
   return (
-    <div className="navbar py-4 border-b bg-white/70 backdrop-blur-lg text-black md:px-10 sticky top-0 z-[99]">
+    <div className="navbar py-4 bg-white/70 dark:bg-blue-gray-800 dark:text-gray-300 backdrop-blur-lg text-black md:px-10 sticky top-0 z-[99] border-b dark:border-b-blue-gray-700">
       <div className="navbar-start w-full md:w-1/2 justify-between md:justify-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -107,14 +107,14 @@ const Header = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-green-600 text-white rounded mt-4 w-52 p-4 shadow z-20 gap-3"
+            className="menu menu-sm dropdown-content bg-green-600 dark:bg-blue-gray-800 dark:text-gray-200 text-white rounded mt-5 w-52 p-4 shadow z-20 gap-3"
           >
             {links}
           </ul>
         </div>
         <Link
           to={"/"}
-          className="text-xl sm:text-3xl text-gray-900 cursor-default font-bold logo flex items-center gap-2"
+          className="text-xl sm:text-3xl text-gray-900 dark:text-white cursor-default font-bold logo flex items-center gap-2"
         >
           <img className="md:w-10 md:h-10 w-7 h-7" src={imgLogo} alt="" />
           <i>ReviewSphere</i>
@@ -127,13 +127,14 @@ const Header = () => {
       </div>
       <div className="navbar-end gap-3 items-center">
         <div className="relative text-2xl cursor-pointer flex items-center gap-4 top-0">
-          <div>
-            {/* <MdOutlineLightMode />
-            <MdOutlineDarkMode /> */}
-            <button onClick={toggleTheme}>
-              Toggle {theme === "dark" ? "Light" : "Dark"} Mode
-            </button>
-          </div>
+          <button onClick={toggleTheme}>
+            {theme === "dark" ? (
+              <MdOutlineLightMode className="text-white" />
+            ) : (
+              <MdOutlineDarkMode />
+            )}{" "}
+          </button>
+
           {user ? (
             <>
               <Menu>
@@ -146,7 +147,7 @@ const Header = () => {
                     src={user?.photoURL}
                   />
                 </MenuHandler>
-                <MenuList className="mt-3 -ml-3 lg:-ml-5 bg-green-600 text-white border-none ">
+                <MenuList className="mt-4 -ml-3 lg:-ml-5 bg-green-600 dark:bg-blue-gray-800 dark:text-gray-300 text-white border-none ">
                   <MenuItem className="flex items-center gap-2 hover:!bg-transparent hover:!text-white">
                     <svg
                       width="16"

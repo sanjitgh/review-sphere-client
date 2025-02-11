@@ -61,20 +61,20 @@ const AddService = () => {
       });
   };
   return (
-    <div className="py-10 bg-gray-50">
+    <div className="py-10 bg-gray-50 dark:bg-blue-gray-900">
       <div className="min-h-[800px] flex justify-center items-center bg-relative">
         <form
           onSubmit={handleService}
-          className="w-[1000px] mx-auto px-3 border shadow-xl shadow-green-50 rounded z-10 my-16 "
+          className="w-[1000px] mx-auto px-3 border shadow-xl shadow-green-50 rounded z-10 my-16 dark:shadow-blue-gray-800 dark:border-blue-gray-700"
         >
-          <h1 className="text-2xl md:text-5xl font-bold text-center pt-10">
+          <h1 className="text-2xl md:text-5xl font-bold text-center pt-10 dark:text-gray-200">
             Add Service Here
           </h1>
           <div className="grid md:grid-cols-2 gap-5 md:p-10">
             {/* Email */}
             <label className="form-control col-span-2 md:col-span-1 w-full">
               <div className="label">
-                <span className="label-text text-black text-base">Email</span>
+                <span className="label-text text-black text-base dark:text-gray-300">Email</span>
               </div>
               <input
                 defaultValue={user?.email}
@@ -83,13 +83,13 @@ const AddService = () => {
                 type="email"
                 disabled
                 required
-                className="input input-bordered w-full bg-transparent focus:outline-none rounded-none placeholder-gray-300"
+                className="input input-bordered w-full dark:bg-transparent dark:border-white dark:text-gray-300  bg-transparent focus:outline-none rounded-none placeholder-gray-300"
               />
             </label>
             {/* image link */}
             <label className="form-control col-span-2 md:col-span-1 w-full">
               <div className="label">
-                <span className="label-text text-black text-base">
+                <span className="label-text text-black text-base dark:text-gray-300">
                   Service Image
                 </span>
               </div>
@@ -99,14 +99,14 @@ const AddService = () => {
                 type="url"
                 placeholder="Service image link"
                 required
-                className="input input-bordered w-full bg-transparent focus:outline-none rounded-none placeholder-gray-300"
+                className="input input-bordered w-full dark:bg-transparent dark:border-white dark:text-gray-300 bg-transparent focus:outline-none rounded-none placeholder-gray-300 "
               />
             </label>
 
             {/* title */}
             <label className="form-control col-span-2 md:col-span-1 w-full">
               <div className="label">
-                <span className="label-text text-black text-base">
+                <span className="label-text text-black text-base dark:text-gray-300">
                   Service Title
                 </span>
               </div>
@@ -116,14 +116,14 @@ const AddService = () => {
                 autoComplete="off"
                 required
                 placeholder="Title"
-                className="input input-bordered w-full  focus:outline-none rounded-none placeholder-gray-300"
+                className="input input-bordered w-full dark:bg-transparent dark:border-white dark:text-gray-300 focus:outline-none rounded-none placeholder-gray-300"
               />
             </label>
 
             {/* Company Name */}
             <label className="form-control col-span-2 md:col-span-1 w-full">
               <div className="label">
-                <span className="label-text text-black text-base">
+                <span className="label-text text-black text-base dark:text-gray-300">
                   Company Name
                 </span>
               </div>
@@ -133,14 +133,14 @@ const AddService = () => {
                 autoComplete="off"
                 required
                 placeholder="Name"
-                className="input input-bordered w-full  focus:outline-none rounded-none placeholder-gray-300"
+                className="input input-bordered w-full dark:bg-transparent dark:border-white dark:text-gray-300   focus:outline-none rounded-none placeholder-gray-300"
               />
             </label>
 
             {/* Website Link */}
             <label className="form-control col-span-2 md:col-span-1 w-full">
               <div className="label">
-                <span className="label-text text-black text-base">Website</span>
+                <span className="label-text text-black text-base dark:text-gray-300">Website</span>
               </div>
               <input
                 name="website"
@@ -148,14 +148,14 @@ const AddService = () => {
                 autoComplete="off"
                 required
                 placeholder="https://www.example.com"
-                className="input input-bordered w-full  focus:outline-none rounded-none placeholder-gray-300"
+                className="input input-bordered w-full dark:bg-transparent dark:border-white dark:text-gray-300   focus:outline-none rounded-none placeholder-gray-300"
               />
             </label>
 
             {/* Price */}
             <label className="form-control col-span-2 md:col-span-1 w-full">
               <div className="label">
-                <span className="label-text text-black text-base">Price</span>
+                <span className="label-text text-black text-base dark:text-gray-300">Price</span>
               </div>
               <input
                 name="price"
@@ -163,20 +163,20 @@ const AddService = () => {
                 autoComplete="off"
                 required
                 placeholder="Price"
-                className="input input-bordered w-full  focus:outline-none rounded-none placeholder-gray-300"
+                className="input input-bordered w-full dark:bg-transparent dark:border-white dark:text-gray-300   focus:outline-none rounded-none placeholder-gray-300"
               />
             </label>
 
             {/* Category */}
             <label className="form-control col-span-2 md:col-span-1 w-full">
               <div className="label">
-                <span className="label-text text-black text-base">
+                <span className="label-text text-black text-base dark:text-gray-300">
                   Category
                 </span>
               </div>
               <select
                 name="category"
-                className="select select-bordered w-full focus:outline-none rounded-none placeholder-gray-300"
+                className="select select-bordered w-full focus:outline-none rounded-none placeholder-gray-300 dark:bg-transparent dark:border-gray-300 dark:text-gray-300"
               >
                 <option disabled className="text-black">
                   Choose One
@@ -191,24 +191,24 @@ const AddService = () => {
             {/* Date */}
             <label className="form-control col-span-2 md:col-span-1 w-full">
               <div className="label">
-                <span className="label-text text-black text-base">Date</span>
+                <span className="label-text text-black text-base dark:text-gray-300">Date</span>
               </div>
               <DatePicker
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
-                className="select select-bordered w-full focus:outline-none rounded-none placeholder-gray-300"
+                className="select select-bordered w-full focus:outline-none rounded-none placeholder-gray-300 dark:bg-transparent dark:border-gray-300 dark:text-gray-300"
               />
             </label>
 
             {/* description */}
             <label className="form-control col-span-2 w-full">
               <div className="label">
-                <span className="label-text text-black text-base">
+                <span className="label-text text-black text-base dark:text-gray-300">
                   Description
                 </span>
               </div>
               <textarea
-                className="textarea textarea-bordered h-32 w-full  focus:outline-none rounded-none placeholder-gray-300"
+                className="textarea textarea-bordered h-32 w-full  focus:outline-none rounded-none placeholder-gray-300 dark:bg-transparent dark:border-gray-300 dark:text-gray-300"
                 name="description"
                 placeholder="Write details here..."
               ></textarea>
@@ -217,7 +217,7 @@ const AddService = () => {
             {/* button */}
             <div className="col-span-2 text-center pb-5">
               <input
-                className="btn text-white hover:bg-green-600 bg-green-500 transition-all rounded-none w-40"
+                className="btn border-none text-white hover:bg-green-600 bg-green-500 transition-all rounded-none w-40 dark:bg-green-800 dark:hover:bg-green-900"
                 type="submit"
                 value="Add Service"
               />

@@ -32,15 +32,18 @@ const Services = () => {
   }, [filter, search]);
 
   return (
-    <div className="pb-20 md:pb-14 pt-5">
+    <div className="pb-20 md:pb-14 pt-5 dark:bg-blue-gray-900 min-h-[95vh]">
       <div className="container mx-auto px-2">
         {/* breadCrumb */}
         <div role="presentation" className="mb-5">
           <Breadcrumbs className="bg-transparent">
-            <Link className="hover:text-green-700" to={"/"}>
+            <Link className="hover:text-green-700 dark:text-gray-200" to={"/"}>
               Home
             </Link>
-            <Link className="hover:text-green-700" to={"/services"}>
+            <Link
+              className="hover:text-green-700 dark:text-gray-200"
+              to={"/services"}
+            >
               Services
             </Link>
           </Breadcrumbs>
@@ -50,10 +53,10 @@ const Services = () => {
         <div className="grid grid-cols-12 gap-5">
           {/* Sidebar */}
           <div className="col-span-12 lg:col-span-3">
-            <div className="bg-gray-50 px-4 pt-2 pb-7 rounded flex flex-col gap-10 shadow">
+            <div className="bg-gray-50 px-4 pt-2 pb-7 rounded flex flex-col gap-10 shadow dark:bg-blue-gray-800">
               {/* Search */}
               <div>
-                <h1 className="text-lg font-bold text-black mb-1">
+                <h1 className="text-lg font-bold text-black mb-1 dark:text-gray-200">
                   Search By Title
                 </h1>
                 <Input
@@ -67,7 +70,7 @@ const Services = () => {
               </div>
               {/* Category Filter */}
               <div>
-                <h1 className="text-lg font-bold text-black mb-1">
+                <h1 className="text-lg font-bold text-black mb-1 dark:text-gray-200">
                   Filter By Category
                 </h1>
                 <Select

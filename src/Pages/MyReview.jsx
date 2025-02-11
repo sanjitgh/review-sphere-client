@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import useAuth from "../hook/useAuth";
 import ReviewCard from "../components/ReviewCard";
 import useAxiosSecure from "../hook/UseAxiosSecure";
 import Skeleton from "react-loading-skeleton";
+import { ThemeContext } from "../DarkModeProvaider/DarkModeProvaider";
 
 const MyReview = () => {
   const [review, setReview] = useState([]);
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
   const [loading, setLoading] = useState(true);
+  const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     document.title = "My Reviews | ReviewSphere";
@@ -33,14 +35,26 @@ const MyReview = () => {
   };
 
   return (
-    <div className="md:py-20 bg-gray-50">
+    <div className="md:py-20 py-14 bg-gray-50 dark:bg-blue-gray-900">
       <div className="max-w-6xl mx-auto px-2 min-h-[95vh]">
-        <p className="mb-4">
+        <p className="mb-4 dark:text-gray-200">
           <span className="font-semibold">Total Review :</span> {review.length}
         </p>
         {loading ? (
           <div>
-            <Skeleton height={30} count={10}></Skeleton>
+            {theme === "dark" ? (
+              <Skeleton
+                baseColor="#37474F"
+                highlightColor="#263238"
+                className="dark:bg-blue-gray-800"
+                height={300}
+                count={5}
+              >
+                :
+              </Skeleton>
+            ) : (
+              <Skeleton height={300} count={5}></Skeleton>
+            )}
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-8">

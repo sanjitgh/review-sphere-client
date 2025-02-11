@@ -19,15 +19,7 @@ const MyServiceCard = ({ service, onDelete }) => {
   const handleOpen = () => setOpen(!open);
   const navigate = useNavigate();
 
-  const {
-    _id,
-    image,
-    title,
-    website,
-    price,
-    category,
-    companyName,
-  } = service;
+  const { _id, image, title, website, price, category, companyName } = service;
 
   const handelDelete = (id) => {
     Swal.fire({
@@ -107,26 +99,29 @@ const MyServiceCard = ({ service, onDelete }) => {
 
   return (
     <>
-      <tr>
+      <tr className="dark:border-blue-gray-800">
         <th>
           <Avatar src={image} />
         </th>
-        <td>{companyName.slice(0, 20)}</td>
-        <td>{title.slice(0, 30)}</td>
-        <td>
+        <td className="dark:text-gray-300">{companyName.slice(0, 20)}</td>
+        <td className="dark:text-gray-300">{title.slice(0, 30)}</td>
+        <td className="dark:text-gray-300">
           <a href={website} target="_blank">
             {website.slice(0, 30)}
           </a>
         </td>
         <td>
-          <Chip className="bg-green-600 text-center w-20 rounded" value={category} />
+          <Chip
+            className="bg-green-600 dark:bg-green-800 text-center w-20 rounded"
+            value={category}
+          />
         </td>
-        <td>$ {price}</td>
+        <td className="dark:text-gray-300">$ {price}</td>
         <td>
           <div className="flex items-center gap-3">
             <FiEdit3
               onClick={() => handelModal(_id)}
-              className="text-2xl text-green-500 cursor-pointer"
+              className="text-2xl text-green-500 cursor-pointer dark:text-green-800"
             />
 
             <HiOutlineTrash
@@ -137,9 +132,14 @@ const MyServiceCard = ({ service, onDelete }) => {
         </td>
       </tr>
 
-      <tr>
-        <td>
-          <Dialog size="lg" open={open} handler={handleOpen}>
+      <tr className="border-none">
+        <td className="p-0">
+          <Dialog
+            size="lg"
+            open={open}
+            handler={handleOpen}
+            className="dark:bg-blue-gray-900 dark:text-gray-200 rounded"
+          >
             <DialogHeader className="justify-end pt-3">
               <IconButton
                 color="blue-gray"
@@ -172,7 +172,7 @@ const MyServiceCard = ({ service, onDelete }) => {
                   {/* Email */}
                   <label className="form-control col-span-2 md:col-span-1 w-full">
                     <div className="label">
-                      <span className="label-text text-black text-base">
+                      <span className="label-text text-black text-base dark:text-gray-200">
                         Email
                       </span>
                     </div>
@@ -183,13 +183,13 @@ const MyServiceCard = ({ service, onDelete }) => {
                       type="email"
                       disabled
                       required
-                      className="input input-bordered w-full bg-transparent focus:outline-none rounded-none placeholder-gray-300"
+                      className="input input-bordered w-full dark:bg-transparent dark:border-blue-gray-700 dark:text-gray-300 bg-transparent focus:outline-none rounded-none placeholder-gray-300 dark:placeholder-gray-400"
                     />
                   </label>
                   {/* image link */}
                   <label className="form-control col-span-2 md:col-span-1 w-full">
                     <div className="label">
-                      <span className="label-text text-black text-base">
+                      <span className="label-text text-black text-base dark:text-gray-200">
                         Service Image
                       </span>
                     </div>
@@ -200,14 +200,14 @@ const MyServiceCard = ({ service, onDelete }) => {
                       type="url"
                       placeholder="Service image link"
                       required
-                      className="input input-bordered w-full bg-transparent focus:outline-none rounded-none placeholder-gray-300"
+                      className="input input-bordered w-full dark:bg-transparent dark:border-blue-gray-700 dark:text-gray-300 bg-transparent focus:outline-none rounded-none placeholder-gray-300 dark:placeholder-gray-400"
                     />
                   </label>
 
                   {/* title */}
                   <label className="form-control col-span-2 md:col-span-1 w-full">
                     <div className="label">
-                      <span className="label-text text-black text-base">
+                      <span className="label-text text-black text-base dark:text-gray-200">
                         Service Title
                       </span>
                     </div>
@@ -219,14 +219,14 @@ const MyServiceCard = ({ service, onDelete }) => {
                       required
                       disabled
                       placeholder="Title"
-                      className="input input-bordered w-full  focus:outline-none rounded-none placeholder-gray-300"
+                      className="input input-bordered w-full dark:bg-transparent dark:border-blue-gray-700 dark:text-gray-300  focus:outline-none rounded-none placeholder-gray-300 dark:placeholder-gray-400"
                     />
                   </label>
 
                   {/* Company Name */}
                   <label className="form-control col-span-2 md:col-span-1 w-full">
                     <div className="label">
-                      <span className="label-text text-black text-base">
+                      <span className="label-text text-black text-base dark:text-gray-200">
                         Company Name
                       </span>
                     </div>
@@ -237,14 +237,14 @@ const MyServiceCard = ({ service, onDelete }) => {
                       autoComplete="off"
                       required
                       placeholder="Name"
-                      className="input input-bordered w-full  focus:outline-none rounded-none placeholder-gray-300"
+                      className="input input-bordered w-full dark:bg-transparent dark:border-blue-gray-700 dark:text-gray-300  focus:outline-none rounded-none placeholder-gray-300 dark:placeholder-gray-400"
                     />
                   </label>
 
                   {/* Website Link */}
                   <label className="form-control col-span-2 md:col-span-1 w-full">
                     <div className="label">
-                      <span className="label-text text-black text-base">
+                      <span className="label-text text-black text-base dark:text-gray-200">
                         Website
                       </span>
                     </div>
@@ -255,14 +255,14 @@ const MyServiceCard = ({ service, onDelete }) => {
                       autoComplete="off"
                       required
                       placeholder="https://www.example.com"
-                      className="input input-bordered w-full  focus:outline-none rounded-none placeholder-gray-300"
+                      className="input input-bordered w-full dark:bg-transparent dark:border-blue-gray-700 dark:text-gray-300  focus:outline-none rounded-none placeholder-gray-300 dark:placeholder-gray-400"
                     />
                   </label>
 
                   {/* Price */}
                   <label className="form-control col-span-2 md:col-span-1 w-full">
                     <div className="label">
-                      <span className="label-text text-black text-base">
+                      <span className="label-text text-black text-base dark:text-gray-200">
                         Price
                       </span>
                     </div>
@@ -273,7 +273,7 @@ const MyServiceCard = ({ service, onDelete }) => {
                       autoComplete="off"
                       required
                       placeholder="Price"
-                      className="input input-bordered w-full  focus:outline-none rounded-none placeholder-gray-300"
+                      className="input input-bordered w-full dark:bg-transparent dark:border-blue-gray-700 dark:text-gray-300  focus:outline-none rounded-none placeholder-gray-300 dark:placeholder-gray-400"
                     />
                   </label>
 
@@ -281,14 +281,14 @@ const MyServiceCard = ({ service, onDelete }) => {
                   {data?.category && (
                     <label className="form-control col-span-2 md:col-span-1 w-full">
                       <div className="label">
-                        <span className="label-text text-black text-base">
+                        <span className="label-text text-black text-base dark:text-gray-200">
                           Category
                         </span>
                       </div>
                       <select
                         defaultValue={data?.category}
                         name="category"
-                        className="select select-bordered w-full focus:outline-none rounded-none placeholder-gray-300"
+                        className="select select-bordered w-full focus:outline-none rounded-none placeholder-gray-300 dark:placeholder-gray-400 dark:bg-transparent dark:border-blue-gray-800"
                       >
                         <option disabled className="text-black">
                           Choose One
@@ -304,7 +304,7 @@ const MyServiceCard = ({ service, onDelete }) => {
                   {/* Date */}
                   <label className="form-control col-span-2 md:col-span-1 w-full">
                     <div className="label">
-                      <span className="label-text text-black text-base">
+                      <span className="label-text text-black text-base dark:text-gray-200">
                         Date
                       </span>
                     </div>
@@ -312,20 +312,20 @@ const MyServiceCard = ({ service, onDelete }) => {
                       defaultValue={startDate}
                       selected={startDate}
                       onChange={(date) => setStartDate(date)}
-                      className="select select-bordered w-full focus:outline-none rounded-none placeholder-gray-300"
+                      className="select select-bordered w-full focus:outline-none rounded-none placeholder-gray-300  dark:placeholder-gray-400 dark:bg-transparent dark:border-blue-gray-800"
                     />
                   </label>
 
                   {/* description */}
                   <label className="form-control col-span-2 w-full">
                     <div className="label">
-                      <span className="label-text text-black text-base">
+                      <span className="label-text text-black text-base dark:text-gray-200">
                         Description
                       </span>
                     </div>
                     <textarea
                       defaultValue={data?.description}
-                      className="textarea textarea-bordered h-32 w-full  focus:outline-none rounded-none placeholder-gray-300"
+                      className="textarea textarea-bordered h-32 w-full  focus:outline-none rounded-none placeholder-gray-300  dark:placeholder-gray-400 dark:bg-transparent dark:border-blue-gray-800"
                       name="description"
                       placeholder="Write details here..."
                     ></textarea>
@@ -334,7 +334,7 @@ const MyServiceCard = ({ service, onDelete }) => {
                   {/* button */}
                   <div className="col-span-2 text-center pb-5">
                     <input
-                      className="btn text-white hover:bg-green-600 bg-green-500 transition-all rounded-none w-40"
+                      className="btn border-none text-white hover:bg-green-600 bg-green-500 transition-all rounded-none w-40 dark:bg-green-800 dark:hover:bg-green-900"
                       type="submit"
                       value="Update Service"
                     />

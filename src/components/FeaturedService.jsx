@@ -12,12 +12,12 @@ const FeaturedService = () => {
     });
   }, []);
   return (
-    <div className="py-14 md:py-20 bg-gray-100">
+    <div className="py-14 md:py-20 bg-gray-100 dark:bg-blue-gray-900">
       <div className="max-w-6xl mx-auto px-2">
-        <h1 className="text-center font-bold text-4xl md:text-5xl">
+        <h1 className="text-center font-bold text-4xl md:text-5xl dark:text-gray-200">
           Featured Service
         </h1>
-        <p className="max-w-xl text-center mx-auto mt-2 mb-12 text-gray-600">
+        <p className="max-w-xl text-center mx-auto mt-2 mb-12 dark:text-gray-200">
           Discover our top services, offering expert solutions, seamless
           execution, and unmatched quality to meet your needs with excellence
           and innovation.
