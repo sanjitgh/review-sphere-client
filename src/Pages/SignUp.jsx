@@ -47,7 +47,7 @@ const SignUp = () => {
         navigate("/");
       })
       .catch((error) => {
-        toast.error("This email already used.");
+        toast.error("This email already used.", error);
       });
   };
 
@@ -55,7 +55,7 @@ const SignUp = () => {
     <div className="py-20 min-h-[95vh] flex justify-center items-center bg-gray-100 dark:bg-blue-gray-900">
       <div className="container mx-auto px-3">
         <div className="card rounded md:p-10 p-5 max-w-[650px] mx-auto shadow-lg shadow-green-50 bg-white dark:bg-blue-gray-800 dark:shadow-blue-gray-800">
-          <h1 className="text-center text-black dark:text-gray-200 font-semibold text-2xl md:text-5xl mb-8 dark:text-gray-200">
+          <h1 className="text-center text-black dark:text-gray-200 font-semibold text-2xl md:text-5xl mb-8">
             Sign Up Form
           </h1>
           <form onSubmit={handelSignUp} className=" px-3">
