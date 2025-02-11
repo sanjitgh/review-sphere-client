@@ -52,68 +52,68 @@ const SignUp = () => {
   };
 
   return (
-    <div className="py-20 min-h-[95vh] flex justify-center items-center bg-gray-50">
+    <div className="py-20 min-h-[95vh] flex justify-center items-center bg-gray-100 dark:bg-blue-gray-900">
       <div className="container mx-auto px-3">
-        <div className="card border md:p-10 p-5 max-w-[650px] mx-auto shadow-lg shadow-green-50">
-          <h1 className="text-center text-black font-semibold text-2xl md:text-5xl mb-8">
+        <div className="card rounded md:p-10 p-5 max-w-[650px] mx-auto shadow-lg shadow-green-50 bg-white dark:bg-blue-gray-800 dark:shadow-blue-gray-800">
+          <h1 className="text-center text-black dark:text-gray-200 font-semibold text-2xl md:text-5xl mb-8 dark:text-gray-200">
             Sign Up Form
           </h1>
           <form onSubmit={handelSignUp} className=" px-3">
             <div className="form-control">
               <label className="label">
-                <span className="text-gray-700">Name</span>
+                <span className="text-gray-700 dark:text-gray-200">Name</span>
               </label>
               <input
                 name="name"
                 type="text"
                 autoComplete="off"
                 placeholder="name"
-                className="input input-bordered bg-transparent placeholder:text-gray-300 text-black"
+                className="input input-bordered rounded bg-transparent placeholder:text-gray-300 text-black dark:text-gray-200"
                 required
               />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="text-black">Photo URL</span>
+                <span className="text-black dark:text-gray-200">Photo URL</span>
               </label>
               <input
                 name="image"
                 type="text"
                 autoComplete="off"
                 placeholder="your-image.com"
-                className="input input-bordered bg-transparent placeholder:text-gray-300 text-black"
+                className="input input-bordered rounded bg-transparent placeholder:text-gray-300 text-black dark:text-gray-200"
                 required
               />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="text-black">Email</span>
+                <span className="text-black dark:text-gray-200">Email</span>
               </label>
               <input
                 name="email"
                 type="email"
                 autoComplete="off"
                 placeholder="email"
-                className="input input-bordered bg-transparent placeholder:text-gray-300 text-black"
+                className="input input-bordered rounded bg-transparent placeholder:text-gray-300 text-black dark:text-gray-200"
                 required
               />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="text-black">Password</span>
+                <span className="text-black dark:text-gray-200">Password</span>
               </label>
               <input
                 name="password"
                 type="password"
                 autoComplete="off"
                 placeholder="password"
-                className="input input-bordered bg-transparent placeholder:text-gray-300 text-black"
+                className="input input-bordered rounded bg-transparent placeholder:text-gray-300 text-black dark:text-gray-200"
                 required
               />
             </div>
 
             <div className="mt-4">
-              <p>
+              <p className="dark:text-gray-200">
                 Already have an account?{" "}
                 <Link to={"/login"}>
                   <b>Login</b>{" "}
@@ -122,7 +122,7 @@ const SignUp = () => {
             </div>
 
             <div className="form-control mt-6">
-              <button className="btn bg-green-500 border-white hover:bg-green-600 text-white text-base font-medium">
+              <button className="btn bg-green-500 border-white hover:bg-green-600 text-white text-base font-medium rounded dark:bg-green-800 dark:hover:bg-green-900 dark:border-none">
                 Register
               </button>
             </div>
