@@ -28,11 +28,11 @@ const ServiceCard = ({ service }) => {
         <Typography variant="h5" color="blue-gray" className="mb-1">
           {title}
         </Typography>
-        <Typography>{description.slice(0, 60)}...</Typography>
+        <Typography className="text-gray-600">{description.slice(0, 60)}...</Typography>
       </CardBody>
       <CardFooter className="pt-0 -mt-2">
         <Link to={`/service/${_id}`}>
-          <Button variant="filled" className="flex items-center gap-1 bg-green-500 px-4 py-3 rounded">
+          <Button variant="filled" className="flex items-center gap-1 bg-green-600 px-4 py-3 rounded">
             See Details <MdOutlineArrowRightAlt className="text-xl" />
           </Button>
         </Link>

@@ -3,24 +3,30 @@ import image from "../assest/images/rb_572.png";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 const OurApp = () => {
   return (
-    <div className="py-20 bg-gray-50">
+    <div className="py-14 md:py-20 bg-gray-100">
       <div className="mx-2">
-        <div className="bg-white border rounded-lg shadow-lg shadow-green-50 p-6 md:flex items-center justify-between max-w-4xl mx-auto">
+        <div className="bg-white border rounded shadow-lg shadow-green-50 p-3 md:flex items-center justify-between max-w-6xl mx-auto">
           <div className="flex-shrink-0">
-            <img src={image} alt="App Preview" className="w-36 h-auto" />
+            <img
+              src={image}
+              alt="App Preview"
+              className="w-36 md:w-60 h-auto"
+            />
           </div>
           <div className="ml-6 flex-grow">
-            <h2 className="text-lg font-semibold text-gray-800">
+            <h2 className="text-3xl md:text-4xl font-semibold text-green-600 mb-2">
               Download our App
             </h2>
-            <p className="text-gray-600 text-sm mt-1">
-              Experience the best of our services on your mobile device.
-              Download now and start exploring.
+            <p className="text-gray-600">
+              Get the ultimate experience of our services right at your
+              fingertips. Enjoy seamless access, exclusive features, and
+              top-notch convenience on your mobile device. Download now and
+              start exploring today!
             </p>
             <div className="mt-4">
               <a href="https://play.google.com" target="_blank">
                 <Button
-                  className="flex items-center gap-2 bg-green-500"
+                  className="flex items-center gap-2 bg-green-600 rounded"
                   variant="filled"
                 >
                   <IoLogoGooglePlaystore />
