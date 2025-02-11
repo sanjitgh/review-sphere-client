@@ -12,11 +12,16 @@ const FeaturedService = () => {
     });
   }, []);
   return (
-    <div className="py-20 bg-gray-50">
+    <div className="py-20 bg-gray-100">
       <div className="max-w-6xl mx-auto px-2">
-        <h1 className="text-center font-bold mb-16 text-2xl md:text-5xl">
+        <h1 className="text-center font-bold text-2xl md:text-5xl">
           Featured Service
         </h1>
+        <p className="max-w-xl text-center mx-auto mt-2 mb-12">
+          Discover our top services, offering expert solutions, seamless
+          execution, and unmatched quality to meet your needs with excellence
+          and innovation.
+        </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
           {service.map((service) => (
             <ServiceCard key={service._id} service={service}></ServiceCard>

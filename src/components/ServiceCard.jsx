@@ -20,25 +20,19 @@ const ServiceCard = ({ service }) => {
   } = service;
 
   return (
-    <Card className="mt-6">
-      <CardHeader color="blue-gray" className="relative">
+    <Card className="mt-6 rounded">
+      <CardHeader color="blue-gray" className="relative rounded">
         <img src={image} alt="card-image" />
       </CardHeader>
       <CardBody>
-        <Typography variant="h5" color="blue-gray" className="mb-2">
+        <Typography variant="h5" color="blue-gray" className="mb-1">
           {title}
         </Typography>
         <Typography>{description.slice(0, 60)}...</Typography>
-        <Typography className="my-1">
-          <span className="text-black font-bold"> Category:</span> {category}
-        </Typography>
-        <Typography>
-          <span className="text-black font-bold"> Price:</span> $ {price}
-        </Typography>
       </CardBody>
-      <CardFooter className="pt-0">
+      <CardFooter className="pt-0 -mt-2">
         <Link to={`/service/${_id}`}>
-          <Button variant="filled" className="flex items-center gap-1 bg-green-500">
+          <Button variant="filled" className="flex items-center gap-1 bg-green-500 px-4 py-3 rounded">
             See Details <MdOutlineArrowRightAlt className="text-xl" />
           </Button>
         </Link>
