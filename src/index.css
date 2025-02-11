@@ -4,9 +4,18 @@
 body {
   font-family: "Open Sans", sans-serif;
 }
+
 .swiper-button-next,
 .swiper-button-prev {
-  color: #4caf50 !important;
+  color: #43a047  !important;
+}
+
+@media screen and (max-width:600px) {
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
 }
 
 @tailwind base;

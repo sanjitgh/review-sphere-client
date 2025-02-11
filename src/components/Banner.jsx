@@ -1,4 +1,3 @@
-import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -6,13 +5,16 @@ import { Navigation } from "swiper/modules";
 import { Button } from "@material-tailwind/react";
 import { motion } from "motion/react";
 import { MdOutlineKeyboardDoubleArrowDown } from "react-icons/md";
+import { Link } from "react-router-dom";
+import useAuth from "../hook/useAuth";
 
 const Banner = () => {
+  const { user } = useAuth();
   return (
     <>
-      <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+      <Swiper navigation={true} modules={[Navigation]}>
         <SwiperSlide>
-          <div className="bg-[url('https://i.ibb.co.com/SQvLvFW/man-browsing-dvds-stockcake.webp')] bg-center bg-cover bg-no-repeat min-h-[800px] relative flex justify-center items-center">
+          <div className="bg-[url('https://i.ibb.co.com/SQvLvFW/man-browsing-dvds-stockcake.webp')] bg-center bg-cover bg-no-repeat min-h-[calc(100vh-81px)] relative flex justify-center items-center px-3">
             <div className="absolute inset-0 bg-black/50 flex items-center justify-center"></div>
             <div className="z-10 text-white dark:text-gray-200 text-center">
               <h1 className="font-bold md:text-5xl text-2xl mb-5">
@@ -32,9 +34,12 @@ const Banner = () => {
                   ease: "easeInOut",
                 }}
               >
-                <Button className="bg-green-500 py-4 hover:bg-green-600 rounded-none mt-6" variant="filled">
+                <Button
+                  className="bg-green-600 py-4 hover:bg-green-700  rounded mt-6"
+                  variant="filled"
+                >
                   <span className="flex items-center gap-2">
-                    Start Exploring
+                    <Link to={"/services"}>Start Exploring</Link>
                     <MdOutlineKeyboardDoubleArrowDown />
                   </span>
                 </Button>
@@ -63,9 +68,14 @@ const Banner = () => {
                   ease: "easeInOut",
                 }}
               >
-                <Button className="bg-green-500 py-4 hover:bg-green-600 rounded-none mt-6" variant="filled">
+                <Button
+                  className="bg-green-600 py-4 hover:bg-green-700  rounded mt-6"
+                  variant="filled"
+                >
                   <span className="flex items-center gap-2">
-                    Get Started Now
+                    <Link to={user ? "/add-service" : "/login"}>
+                      Get Started Now
+                    </Link>
                     <MdOutlineKeyboardDoubleArrowDown />
                   </span>
                 </Button>
@@ -94,9 +104,12 @@ const Banner = () => {
                   ease: "easeInOut",
                 }}
               >
-                <Button className="bg-green-500 py-4 hover:bg-green-600 rounded-none mt-6" variant="filled">
+                <Button
+                  className="bg-green-600 py-4 hover:bg-green-700  rounded mt-6"
+                  variant="filled"
+                >
                   <span className="flex items-center gap-2">
-                    Write a Review
+                    <Link to={"/services"}>Write a Review</Link>
                     <MdOutlineKeyboardDoubleArrowDown />
                   </span>
                 </Button>
