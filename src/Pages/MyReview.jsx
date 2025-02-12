@@ -20,7 +20,7 @@ const MyReview = () => {
         const { data } = await axiosSecure.get(`/review?email=${user?.email}`);
         setReview(data);
       } catch (error) {
-        console.log(error);
+        // console.log(error);
       } finally {
         setLoading(false);
       }

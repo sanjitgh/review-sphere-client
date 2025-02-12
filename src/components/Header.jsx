@@ -114,7 +114,7 @@ const Header = () => {
         </div>
         <Link
           to={"/"}
-          className="text-xl sm:text-3xl text-gray-900 dark:text-white cursor-default font-bold logo flex items-center gap-2"
+          className="text-xl sm:text-3xl text-gray-900 dark:text-white cursor-pointer font-bold logo flex items-center gap-2"
         >
           <img className="md:w-10 md:h-10 w-7 h-7" src={imgLogo} alt="" />
           <i>ReviewSphere</i>

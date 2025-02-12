@@ -17,7 +17,7 @@ const FeaturedService = () => {
           setService(res.data);
         });
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     } finally {
       setLoading(false);
     }
