@@ -1,15 +1,26 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ServiceCard from "./ServiceCard";
+import SkeletonStyle from "./SkeletonStyle";
 
 const FeaturedService = () => {
   const [service, setService] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   // get service data from db
   useEffect(() => {
-    axios.get("https://review-brown.vercel.app/featuredService").then((res) => {
-      setService(res.data);
-    });
+    try {
+      setLoading(true);
+      axios
+        .get("https://review-brown.vercel.app/featuredService")
+        .then((res) => {
+          setService(res.data);
+        });
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
   }, []);
   return (
     <div className="py-14 md:py-20 bg-gray-100 dark:bg-blue-gray-900">
@@ -22,11 +33,15 @@ const FeaturedService = () => {
           execution, and unmatched quality to meet your needs with excellence
           and innovation.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-          {service.map((service) => (
-            <ServiceCard key={service._id} service={service}></ServiceCard>
-          ))}
-        </div>
+        {loading ? (
+          <SkeletonStyle></SkeletonStyle>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+            {service.map((service) => (
+              <ServiceCard key={service._id} service={service}></ServiceCard>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

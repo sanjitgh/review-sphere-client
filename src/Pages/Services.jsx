@@ -71,7 +71,7 @@ const Services = () => {
               {/* Category Filter */}
               <div>
                 <h1 className="text-lg font-bold text-black mb-1 dark:text-gray-200">
-                  Filter By Category
+                  Sort By Category
                 </h1>
                 <Select
                   onChange={(e) => setFilter(e)}

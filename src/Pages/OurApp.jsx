@@ -15,7 +15,7 @@ const OurApp = () => {
           </div>
           <div className="ml-6 flex-grow">
             <h2 className="text-3xl md:text-4xl font-semibold text-green-600 mb-2">
-              Download our App
+              Download Our App
             </h2>
             <p className="text-gray-600 dark:text-gray-300">
               Get the ultimate experience of our services right at your
